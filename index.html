@@ -262,7 +262,8 @@ function studyV() {
 }
 function stg(c) { return "<div class=\"lb\">".concat(t('tags'), "</div>") + (S.tags.map(function (g) { return "<button class=\"tg".concat(c.g.includes(g) ? ' on' : '', "\" data-a=\"ct\" data-i=\"").concat(esc(g), "\">").concat(esc(g), "</button>"); }).join('') || "<span class=\"mu\">".concat(t('noTags'), "</span>")) + "<div class=\"nb\"><input id=\"sn\" placeholder=\"".concat(t('newTag'), "\"><button data-a=\"cn\">\uFF0B</button></div>"); }
 /* dictionary pane */
-var fold = function (s) { return norm(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ı/g, 'i'); };
+var FR = 'çğöşüâîûêôéèëáàäíìïóòúùñýıйё', TOO = 'cgosuaiueoeeeaaaiiioouunyiие', fold = function (s) { s = norm(s); if (s.normalize)
+    s = s.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); return s.replace(/[çğöşüâîûêôéèëáàäíìïóòúùñýıйё]/g, function (m) { return TOO.charAt(FR.indexOf(m)); }); };
 function flt() {
     var q = fold(BF.q), ids = BF.d ? new MiniSet(sub(BF.d)) : null, r = S.cards.filter(function (c) { return (!ids || ids.has(c.k)) && (!BF.g || c.g.includes(BF.g)) && (!q || fold(c.w + ' ' + Object.values(c.t).join(' ') + ' ' + c.d).includes(q)); });
     var sc = function (c) { if (!q)
