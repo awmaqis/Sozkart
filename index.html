@@ -83,8 +83,7 @@ if(!Array.prototype.includes)Array.prototype.includes=function(x){return this.in
 if(!String.prototype.includes)String.prototype.includes=function(x,i){return this.indexOf(x,i)>-1};
 if(window.NodeList&&!NodeList.prototype.forEach)NodeList.prototype.forEach=Array.prototype.forEach;
 if(!window.fetch)window.fetch=function(u,o){o=o||{};return new Promise(function(res,rej){var x=new XMLHttpRequest();x.open(o.method||'GET',u);var h=o.headers||{};for(var k in h)x.setRequestHeader(k,h[k]);x.onload=function(){res({ok:x.status>=200&&x.status<300,status:x.status,text:function(){return Promise.resolve(x.responseText)},json:function(){return Promise.resolve(JSON.parse(x.responseText))}})};x.onerror=function(){rej(new Error('net'))};x.send(o.body||null)})};
-})();
-"use strict";
+})();"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -258,7 +257,7 @@ function ref(x) { var e = $('#bl'), s = e.scrollTop; e.innerHTML = lst(); e.scro
     $('#pl').innerHTML = left(); }
 function decksV() {
     if (!S.decks.length)
-        return "<div class=\"pn\"><h2>".concat(t('emptyT'), "</h2><p class=\"mu\">").concat(t('emptyH'), "</p><button class=\"pri\" data-a=\"nd\">\uFF0B ").concat(t('newDeck'), "</button></div>");
+        return "<div class=\"pn\"><h2>".concat(t('emptyT'), "</h2><p class=\"mu\">").concat(t('emptyH'), "</p><button class=\"pri\" data-a=\"cl\">\u27F3 ").concat(t('clLoad'), "</button> <button data-a=\"nd\">\uFF0B ").concat(t('newDeck'), "</button><p class=\"mu\" id=\"cls\"></p></div>");
     var rows = order().map(function (_a) {
         var _b = __read(_a, 2), d = _b[0], lv = _b[1];
         var c = counts(d.id), ch = kids(d.id).length;
@@ -485,7 +484,7 @@ A.cl = function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_c) {
         switch (_c.label) {
             case 0:
-                m = $('#cls');
+                m = $('#cls') || {};
                 m.textContent = '…';
                 tk = (S.gt || '').trim();
                 tries = tk ? [function () { return fetch("https://api.github.com/repos/".concat(GH.repo, "/contents/").concat(GH.path, "?ref=").concat(GH.br), { headers: { Authorization: 'Bearer ' + tk, Accept: 'application/vnd.github.raw+json' }, cache: 'no-store' }); }] : [function () { return fetch(GH.path + '?t=' + Date.now(), { cache: 'no-store' }); }, function () { return fetch("https://raw.githubusercontent.com/".concat(GH.repo, "/").concat(GH.br, "/").concat(GH.path, "?t=").concat(Date.now()), { cache: 'no-store' }); }];
@@ -532,8 +531,10 @@ A.cl = function () { return __awaiter(void 0, void 0, void 0, function () {
         }
     });
 }); };
+var say = function (q, x) { var e = $(q); if (e)
+    e.textContent = x; };
 function imp(f) { if (!f)
-    return; f.text().then(impT).catch(function () { return $('#ims').textContent = t('impBad'); }); }
+    return; f.text().then(impT).catch(function () { return say('#ims', t('impBad')); }); }
 function impT(x) {
     var e_5, _a, e_6, _b, _c;
     var j;
@@ -541,7 +542,7 @@ function impT(x) {
         j = JSON.parse(x);
     }
     catch (e) {
-        return $('#ims').textContent = t('impBad');
+        return say('#ims', t('impBad'));
     }
     var a = 0, s = 0;
     var put = function (k, w, tr, d, g) { if (!w || dup(w)) {
@@ -608,9 +609,10 @@ function impT(x) {
         } });
     }
     else
-        return $('#ims').textContent = t('impBad');
+        return say('#ims', t('impBad'));
     save();
-    $('#ims').textContent = t('impOk').replace('{a}', a).replace('{s}', s);
+    go();
+    say('#ims', t('impOk').replace('{a}', a).replace('{s}', s));
 }
 A.qa = function () { var i = $('#qw'), w = i.value.trim(); if (!w)
     return i.focus(); var x = dup(w); if (x) {
@@ -747,4 +749,6 @@ addEventListener('keydown', function (e) {
 });
 theme();
 go();
+if (!S.cards.length && /^https?:/.test(location.protocol))
+    A.cl();
 </script></body></html>
