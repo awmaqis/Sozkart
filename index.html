@@ -75,7 +75,17 @@ header>*{margin:3px}.dh>*+*,.dr>*+*{margin-left:4px}.bt>*{margin:0 4px}.tg>*+*{m
 </style></head>
 <body>
 <header id="hd"></header><main id="app"></main><div class="ov" id="md" hidden></div><div id="ts" role="status"></div>
-<script>(function(){
+<script>window.onerror=function(m,u,l,c){try{var d=document.getElementById('app')||document.body,e=document.createElement('pre');e.style.cssText='white-space:pre-wrap;padding:12px;margin:8px;border:1px solid #c4321c;color:#c4321c;font:13px/1.4 monospace;background:#fff';e.textContent='JS error: '+m+' (line '+l+':'+c+')';d.insertBefore(e,d.firstChild)}catch(x){}};
+(function(){var E=window.Element&&Element.prototype,S=String.prototype,A=Array.prototype;
+if(E&&!E.matches)E.matches=E.webkitMatchesSelector||E.msMatchesSelector;
+if(E&&!E.closest)E.closest=function(s){var e=this;while(e&&e.nodeType==1){if(e.matches(s))return e;e=e.parentNode}return null};
+if(!S.startsWith)S.startsWith=function(x,p){p=p||0;return this.substr(p,x.length)===x};
+if(!S.repeat)S.repeat=function(n){return new Array(n+1).join(this)};
+if(!A.find)A.find=function(f,t){for(var i=0;i<this.length;i++)if(f.call(t,this[i],i,this))return this[i]};
+if(!A.findIndex)A.findIndex=function(f,t){for(var i=0;i<this.length;i++)if(f.call(t,this[i],i,this))return i;return -1};
+if(!Object.assign)Object.assign=function(t){for(var i=1;i<arguments.length;i++){var s=arguments[i];if(s)for(var k in s)if(Object.prototype.hasOwnProperty.call(s,k))t[k]=s[k]}return t};
+})();
+(function(){
 if(!Object.values)Object.values=function(o){return Object.keys(o).map(function(k){return o[k]})};
 if(!Object.entries)Object.entries=function(o){return Object.keys(o).map(function(k){return [k,o[k]]})};
 if(!Array.prototype.flatMap)Array.prototype.flatMap=function(f,t){var r=[];for(var i=0;i<this.length;i++){var v=f.call(t,this[i],i,this);if(Array.isArray(v))r.push.apply(r,v);else r.push(v)}return r};
