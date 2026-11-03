@@ -166,7 +166,7 @@ function CL(e, c, on) { var r = ' ' + (e.className || '') + ' '; while (r.indexO
 function K(e) { if (e.key)
     return e.key; var c = e.keyCode || e.which; return c == 13 ? 'Enter' : c == 27 ? 'Escape' : c == 32 ? ' ' : (c >= 49 && c <= 52) ? String.fromCharCode(c) : (c >= 97 && c <= 100) ? String(c - 96) : ''; }
 var $ = function (s) { return document.querySelector(s); }, uid = function () { return Math.random().toString(36).slice(2, 9); }, esc = function (s) { return String(s !== null && s !== void 0 ? s : '').replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]); }); };
-var D = { add: 'Kart ekle|Add card', addB: 'Ekle|Add', edit: 'Kartı düzenle|Edit card', browse: 'Gözat|Browse', decks: 'Desteler|Decks', set: 'Ayarlar|Settings', new: 'Yeni|New', due: 'Tekrar|Due', newDeck: 'Yeni deste|New deck', subdeck: 'Alt deste|Subdeck', deckName: 'Deste adı|Deck name', create: 'Oluştur|Create', cancel: 'İptal|Cancel', close: 'Kapat|Close', save: 'Kaydet|Save', delete: 'Sil|Delete', sure: 'Emin misin?|Sure?', deleted: 'Silindi|Deleted', saved: 'Kaydedildi|Saved', added: 'eklendi|added', deck: 'Deste|Deck', word: 'Kelime|Word', wordPh: 'Eklenecek kelime…|Word to add…', avail: 'Bu kelime sözlükte yok, eklenebilir|Not in the dictionary yet, you can add it', exists: 'Bu kelime zaten sözlükte var|This word is already in the dictionary', desc: 'Açıklama|Description', tags: 'Etiketler|Tags', newTag: 'Yeni etiket…|New tag…', noTags: 'Henüz etiket yok, aşağıdan ekle|No tags yet, add one below', boxes: 'Çeviri kutuları|Translation boxes', boxPh: 'Yeni çeviri kutusu adı (örn. Rusça)|New box name (e.g. Russian)', addBox: 'Kutu ekle|Add box', boxHint: 'Kutular bu destedeki tüm kartlarda görünür.|Boxes appear on every card in this deck.', boxExists: 'Bu adda bir kutu var|A box with this name exists', deckExists: 'Bu adda bir deste var|A deck with this name exists', deckSet: 'Deste ayarları|Deck settings', trans: 'Çeviri|Translation', showAns: 'Cevabı göster|Show answer', again: 'Tekrar|Again', hard: 'Zor|Hard', good: 'İyi|Good', easy: 'Kolay|Easy', done: 'Bugünlük bu kadar!|All done for now!', doneH: 'Bu destede şimdilik çalışılacak kart kalmadı.|No more cards to study in this deck right now.', back: 'Destelere dön|Back to decks', search: 'Kelime, çeviri veya açıklama ara…|Search word, translation or description…', all: 'Tüm desteler|All decks', cards: 'kart|cards', lang: 'Dil|Language', theme: 'Tema|Theme', th_auto: 'Otomatik|Auto', th_light: 'Açık|Light', th_dark: 'Koyu|Dark', th_ocean: 'Okyanus|Ocean', perDay: 'Günlük yeni kart|New cards per day', tagMgr: 'Etiketleri yönet|Manage tags', data: 'Yedek ve içe aktarma|Backup and import', export: 'Dışa aktar (JSON)|Export (JSON)', import: 'İçe aktar (JSON)|Import (JSON)', impOk: 'İçe aktarıldı: {a} yeni, {s} zaten vardı|Imported: {a} new, {s} already existed', impBad: 'Dosya okunamadı veya biçim tanınmadı|Could not read this file or format not recognised', noDl: 'Dışa aktarma burada kullanılamıyor|Export is not available here', saveErr: 'Tarayıcı depolaması dolu veya kapalı|Browser storage is full or disabled', mn: ' dk| min', dy: ' g| d', mo: ' ay| mo', emptyT: 'İlk destenle başla|Start with your first deck', emptyH: 'Deste oluştur, sonra kart ekle. Amisa verin varsa Ayarlar › İçe aktar.|Create a deck, then add cards. Have Amisa data? Settings › Import.', cnt: '{n} kart silinecek|{n} cards will be deleted', cardsT: 'Kartlar|Cards', dictT: 'Sözlük|Dictionary', sel: 'seçili|selected', moveTo: 'Desteye taşı…|Move to deck…', narrow: 'Aramayı daralt|Narrow the search', s_az: 'A–Z|A–Z', s_new: 'En yeni|Newest', s_deck: 'Deste|By deck', cloud: 'GitHub (data.json)|GitHub (data.json)', clLoad: 'data.json yükle|Load data.json', clTok: 'Token (yalnızca özel repo için, isteğe bağlı)|Token (private repo only, optional)', clErr: 'Yüklenemedi|Could not load' };
+var D = { add: 'Kart ekle|Add card', addB: 'Ekle|Add', edit: 'Kartı düzenle|Edit card', browse: 'Gözat|Browse', decks: 'Desteler|Decks', set: 'Ayarlar|Settings', new: 'Yeni|New', due: 'Tekrar|Due', newDeck: 'Yeni deste|New deck', subdeck: 'Alt deste|Subdeck', deckName: 'Deste adı|Deck name', create: 'Oluştur|Create', cancel: 'İptal|Cancel', close: 'Kapat|Close', save: 'Kaydet|Save', delete: 'Sil|Delete', sure: 'Emin misin?|Sure?', deleted: 'Silindi|Deleted', saved: 'Kaydedildi|Saved', added: 'eklendi|added', deck: 'Deste|Deck', word: 'Kelime|Word', wordPh: 'Eklenecek kelime…|Word to add…', avail: 'Bu kelime sözlükte yok, eklenebilir|Not in the dictionary yet, you can add it', exists: 'Bu kelime zaten sözlükte var|This word is already in the dictionary', desc: 'Açıklama|Description', tags: 'Etiketler|Tags', newTag: 'Yeni etiket…|New tag…', noTags: 'Henüz etiket yok, aşağıdan ekle|No tags yet, add one below', boxes: 'Çeviri kutuları|Translation boxes', boxPh: 'Yeni çeviri kutusu adı (örn. Rusça)|New box name (e.g. Russian)', addBox: 'Kutu ekle|Add box', boxHint: 'Kutular bu destedeki tüm kartlarda görünür.|Boxes appear on every card in this deck.', boxExists: 'Bu adda bir kutu var|A box with this name exists', deckExists: 'Bu adda bir deste var|A deck with this name exists', deckSet: 'Deste ayarları|Deck settings', trans: 'Çeviri|Translation', showAns: 'Cevabı göster|Show answer', again: 'Tekrar|Again', waitN: 'Sonraki kart|Next card in', waitS: 'Şimdi göster|Show now', hard: 'Zor|Hard', good: 'İyi|Good', easy: 'Kolay|Easy', done: 'Bugünlük bu kadar!|All done for now!', doneH: 'Bu destede şimdilik çalışılacak kart kalmadı.|No more cards to study in this deck right now.', back: 'Destelere dön|Back to decks', search: 'Kelime, çeviri veya açıklama ara…|Search word, translation or description…', all: 'Tüm desteler|All decks', cards: 'kart|cards', lang: 'Dil|Language', theme: 'Tema|Theme', th_auto: 'Otomatik|Auto', th_light: 'Açık|Light', th_dark: 'Koyu|Dark', th_ocean: 'Okyanus|Ocean', perDay: 'Günlük yeni kart|New cards per day', tagMgr: 'Etiketleri yönet|Manage tags', data: 'Yedek ve içe aktarma|Backup and import', export: 'Dışa aktar (JSON)|Export (JSON)', import: 'İçe aktar (JSON)|Import (JSON)', impOk: 'İçe aktarıldı: {a} yeni, {s} zaten vardı|Imported: {a} new, {s} already existed', impBad: 'Dosya okunamadı veya biçim tanınmadı|Could not read this file or format not recognised', noDl: 'Dışa aktarma burada kullanılamıyor|Export is not available here', saveErr: 'Tarayıcı depolaması dolu veya kapalı|Browser storage is full or disabled', mn: ' dk| min', dy: ' g| d', mo: ' ay| mo', emptyT: 'İlk destenle başla|Start with your first deck', emptyH: 'Deste oluştur, sonra kart ekle. Amisa verin varsa Ayarlar › İçe aktar.|Create a deck, then add cards. Have Amisa data? Settings › Import.', cnt: '{n} kart silinecek|{n} cards will be deleted', cardsT: 'Kartlar|Cards', dictT: 'Sözlük|Dictionary', sel: 'seçili|selected', moveTo: 'Desteye taşı…|Move to deck…', narrow: 'Aramayı daralt|Narrow the search', s_az: 'A–Z|A–Z', s_new: 'En yeni|Newest', s_deck: 'Deste|By deck', cloud: 'GitHub (data.json)|GitHub (data.json)', clLoad: 'data.json yükle|Load data.json', clTok: 'Token (yalnızca özel repo için, isteğe bağlı)|Token (private repo only, optional)', clErr: 'Yüklenemedi|Could not load' };
 var S = (function () { try {
     var j = JSON.parse(localStorage.getItem('sozkart'));
     if (j && j.decks)
@@ -210,7 +210,7 @@ function sched(c, q) {
         r.ivl = 0;
         if (c.st == 'rev')
             r.ef = Math.max(1.3, c.ef - .2);
-        r.due = 10 * M;
+        r.due = M;
     }
     else if (c.st != 'rev') {
         if (q == 2) {
@@ -248,10 +248,24 @@ function decksV() {
     }).join('');
     return "<div class=\"pn\" style=\"padding:0\"><div class=\"dh\"><span style=\"flex:1;padding-left:8px\">".concat(t('decks'), "</span><span class=\"cn\"><i>").concat(t('new'), "</i><i>").concat(t('due'), "</i></span><span style=\"width:76px\"></span></div>").concat(rows, "</div><p><button data-a=\"nd\">\uFF0B ").concat(t('newDeck'), "</button></p>");
 }
+var WT;
+var ord = function () { var now = Date.now(), g = function (id) { return S.cards.find(function (x) { return x.id == id; }); }, rl = [], ot = [], wl = []; Q.q.forEach(function (id) { var c = g(id); if (!c)
+    return; if (c.st == 'lrn' && c.due > now)
+    wl.push(id);
+else if (c.st == 'lrn')
+    rl.push(id);
+else
+    ot.push(id); }); var by = function (a, b) { return g(a).due - g(b).due; }; rl.sort(by); wl.sort(by); Q.q = rl.concat(ot, wl); };
 function studyV() {
     var c = S.cards.find(function (x) { return x.id == Q.q[0]; });
     if (!c)
         return "<div class=\"pn\"><h2>\uD83C\uDF89 ".concat(t('done'), "</h2><p class=\"mu\">").concat(t('doneH'), "</p><button class=\"pri\" data-a=\"hm\">").concat(t('back'), "</button></div>");
+    clearTimeout(WT);
+    if (c.st == 'lrn' && c.due > Date.now() && !Q.early) {
+        var rem = c.due - Date.now();
+        WT = setTimeout(function () { ord(); go(); }, Math.min(rem, 1000));
+        return "<div class=\"pn\"><div class=\"sh\"><span class=\"mu\">".concat(esc(path(Q.deck)), " (").concat(Q.q.length, ")</span></div><div class=\"wd\">\u23F1</div><p class=\"mu\">").concat(t('waitN'), " ").concat(Math.ceil(rem / 1000), " s</p><button data-a=\"ew\">").concat(t('waitS'), "</button></div>");
+    }
     var d = dk(c.k), fs = (d ? d.f : []).filter(function (f) { return c.t[f.id]; });
     var h = "<div class=\"pn\"><div class=\"sh\"><span class=\"mu\">".concat(esc(path(Q.deck)), " (").concat(Q.q.length, ")</span><button class=\"ic\" data-a=\"ec\" data-i=\"").concat(c.id, "\" title=\"").concat(t('edit'), "\">\u270E</button></div><div class=\"wd\">").concat(esc(c.w), "</div>");
     if (Q.show)
@@ -334,7 +348,15 @@ A.ec = function (id) { return cardForm(null, S.cards.find(function (c) { return 
 A.tg = function (id) { var d = dk(id); d.o = d.o === false; save(); go(); };
 A.st = function (id) { var ids = new MiniSet(sub(id)), now = Date.now(), due = S.cards.filter(function (c) { return ids.has(c.k) && c.st != 'new' && c.due <= now; }).sort(function (a, b) { return a.due - b.due; }), nw = S.cards.filter(function (c) { return ids.has(c.k) && c.st == 'new'; }).slice(0, remNew()); cur = id; Q = { deck: id, q: __spreadArray(__spreadArray([], due, true), nw, true).map(function (c) { return c.id; }), show: 0 }; V = 'study'; go(); };
 A.sa = function () { if (Q && Q.q.length) {
-    Q.show = 1;
+    var c = S.cards.find(function (x) { return x.id == Q.q[0]; });
+    if (c && c.st == 'lrn' && c.due > Date.now() && !Q.early)
+        Q.early = 1;
+    else
+        Q.show = 1;
+    go();
+} };
+A.ew = function () { if (Q) {
+    Q.early = 1;
     go();
 } };
 A.gr = function (q) { if (!Q || !Q.q.length)
@@ -342,7 +364,7 @@ A.gr = function (q) { if (!Q || !Q.q.length)
     remNew();
     S.nd.n++;
 } Object.assign(c, { st: r.st, ivl: r.ivl, ef: r.ef, due: Date.now() + r.due }); if (r.st == 'lrn')
-    Q.q.push(id); Q.show = 0; save(); go(); };
+    Q.q.push(id); Q.show = 0; Q.early = 0; ord(); save(); go(); };
 A.tgl = function (g) { F.g = F.g.includes(g) ? F.g.filter(function (x) { return x != g; }) : __spreadArray(__spreadArray([], F.g, true), [g], false); $('#fg').innerHTML = tagsH(); };
 A.at = function () { var i = $('#nt'), g = i.value.trim(); if (!g)
     return; var ex = S.tags.find(function (x) { return norm(x) == norm(g); }) || (S.tags.push(g), g); if (!F.g.includes(ex))
