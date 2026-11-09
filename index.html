@@ -96,6 +96,8 @@ header>*{margin:3px}
 .tl{padding:8px 0}
 .tl b{display:block;font-weight:700;font-size:.95rem;color:#181c22;margin-bottom:2px}html[data-theme=dark] .tl b{display:block;font-weight:700;font-size:.95rem;color:#e8ebf0;margin-bottom:2px}html[data-theme=ocean] .tl b{display:block;font-weight:700;font-size:.95rem;color:#e6f1f8;margin-bottom:2px}
 .tx{white-space:pre-line;word-wrap:break-word;color:#181c22}html[data-theme=dark] .tx{white-space:pre-line;word-wrap:break-word;color:#e8ebf0}html[data-theme=ocean] .tx{white-space:pre-line;word-wrap:break-word;color:#e6f1f8}
+.fo .dn{font-weight:700}
+.fo{background:rgba(127,127,127,.08)}
 input,select,textarea{-webkit-box-sizing:border-box;box-sizing:border-box}
 .bt button{display:block;text-align:center}.bt small{display:block}
 .fr{display:block;margin:-3px}.fr>*{display:inline-block;vertical-align:top;width:31.5%;margin:3px .8%;-webkit-box-flex:0;-webkit-flex:none;flex:none}.fr>input{display:block;width:98.4%}
@@ -170,26 +172,47 @@ function CL(e, c, on) { var r = ' ' + (e.className || '') + ' '; while (r.indexO
 function K(e) { if (e.key)
     return e.key; var c = e.keyCode || e.which; return c == 13 ? 'Enter' : c == 27 ? 'Escape' : c == 32 ? ' ' : (c >= 49 && c <= 52) ? String.fromCharCode(c) : (c >= 97 && c <= 100) ? String(c - 96) : ''; }
 var $ = function (s) { return document.querySelector(s); }, uid = function () { return Math.random().toString(36).slice(2, 9); }, esc = function (s) { return String(s !== null && s !== void 0 ? s : '').replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]); }); };
-var D = { add: 'Kart ekle|Add card', addB: 'Ekle|Add', edit: 'Kartı düzenle|Edit card', browse: 'Gözat|Browse', decks: 'Desteler|Decks', set: 'Ayarlar|Settings', new: 'Yeni|New', due: 'Tekrar|Due', newDeck: 'Yeni deste|New deck', subdeck: 'Alt deste|Subdeck', deckName: 'Deste adı|Deck name', create: 'Oluştur|Create', cancel: 'İptal|Cancel', close: 'Kapat|Close', save: 'Kaydet|Save', delete: 'Sil|Delete', sure: 'Emin misin?|Sure?', deleted: 'Silindi|Deleted', saved: 'Kaydedildi|Saved', added: 'eklendi|added', deck: 'Deste|Deck', word: 'Kelime|Word', wordPh: 'Eklenecek kelime…|Word to add…', avail: 'Bu kelime sözlükte yok, eklenebilir|Not in the dictionary yet, you can add it', exists: 'Bu kelime zaten sözlükte var|This word is already in the dictionary', desc: 'Açıklama|Description', descLbl: 'Açıklama başlığı|Description label', tags: 'Etiketler|Tags', newTag: 'Yeni etiket…|New tag…', noTags: 'Henüz etiket yok, aşağıdan ekle|No tags yet, add one below', boxes: 'Çeviri kutuları|Translation boxes', boxPh: 'Yeni çeviri kutusu adı (örn. Rusça)|New box name (e.g. Russian)', addBox: 'Kutu ekle|Add box', boxHint: 'Kutular bu destedeki tüm kartlarda görünür.|Boxes appear on every card in this deck.', boxExists: 'Bu adda bir kutu var|A box with this name exists', deckExists: 'Bu adda bir deste var|A deck with this name exists', deckSet: 'Deste ayarları|Deck settings', trans: 'Çeviri|Translation', showAns: 'Cevabı göster|Show answer', again: 'Tekrar|Again', waitN: 'Sonraki kart|Next card in', waitS: 'Şimdi göster|Show now', hard: 'Zor|Hard', good: 'İyi|Good', easy: 'Kolay|Easy', done: 'Bugünlük bu kadar!|All done for now!', doneH: 'Bu destede şimdilik çalışılacak kart kalmadı.|No more cards to study in this deck right now.', back: 'Destelere dön|Back to decks', search: 'Kelime, çeviri veya açıklama ara…|Search word, translation or description…', all: 'Tüm desteler|All decks', cards: 'kart|cards', lang: 'Dil|Language', theme: 'Tema|Theme', th_auto: 'Otomatik|Auto', th_light: 'Açık|Light', th_dark: 'Koyu|Dark', th_ocean: 'Okyanus|Ocean', perDay: 'Günlük yeni kart|New cards per day', tagMgr: 'Etiketleri yönet|Manage tags', data: 'Yedek ve içe aktarma|Backup and import', export: 'Dışa aktar (JSON)|Export (JSON)', import: 'İçe aktar (JSON)|Import (JSON)', impOk: 'İçe aktarıldı: {a} yeni, {s} zaten vardı|Imported: {a} new, {s} already existed', impBad: 'Dosya okunamadı veya biçim tanınmadı|Could not read this file or format not recognised', noDl: 'Dışa aktarma burada kullanılamıyor|Export is not available here', saveErr: 'Tarayıcı depolaması dolu veya kapalı|Browser storage is full or disabled', mn: ' dk| min', dy: ' g| d', mo: ' ay| mo', emptyT: 'İlk destenle başla|Start with your first deck', emptyH: 'Deste oluştur, sonra kart ekle. Amisa verin varsa Ayarlar › İçe aktar.|Create a deck, then add cards. Have Amisa data? Settings › Import.', cnt: '{n} kart silinecek|{n} cards will be deleted', cardsT: 'Kartlar|Cards', dictT: 'Sözlük|Dictionary', sel: 'seçili|selected', moveTo: 'Desteye taşı…|Move to deck…', narrow: 'Aramayı daralt|Narrow the search', s_az: 'A–Z|A–Z', s_new: 'En yeni|Newest', s_deck: 'Deste|By deck', cloud: 'GitHub (data.json)|GitHub (data.json)', clLoad: 'data.json yükle|Load data.json', clTok: 'Token (yalnızca özel repo için, isteğe bağlı)|Token (private repo only, optional)', clErr: 'Yüklenemedi|Could not load' };
+var D = { add: 'Kart ekle|Add card', addB: 'Ekle|Add', edit: 'Kartı düzenle|Edit card', browse: 'Gözat|Browse', decks: 'Desteler|Decks', set: 'Ayarlar|Settings', new: 'Yeni|New', due: 'Tekrar|Due', newDeck: 'Yeni deste|New deck', subdeck: 'Alt deste|Subdeck', deckName: 'Deste adı|Deck name', create: 'Oluştur|Create', cancel: 'İptal|Cancel', close: 'Kapat|Close', save: 'Kaydet|Save', delete: 'Sil|Delete', sure: 'Emin misin?|Sure?', deleted: 'Silindi|Deleted', saved: 'Kaydedildi|Saved', added: 'eklendi|added', deck: 'Deste|Deck', word: 'Kelime|Word', wordPh: 'Eklenecek kelime…|Word to add…', avail: 'Bu kelime sözlükte yok, eklenebilir|Not in the dictionary yet, you can add it', exists: 'Bu kelime zaten sözlükte var|This word is already in the dictionary', desc: 'Açıklama|Description', descLbl: 'Açıklama başlığı|Description label', tags: 'Etiketler|Tags', newTag: 'Yeni etiket…|New tag…', noTags: 'Henüz etiket yok, aşağıdan ekle|No tags yet, add one below', boxes: 'Çeviri kutuları|Translation boxes', boxPh: 'Yeni çeviri kutusu adı (örn. Rusça)|New box name (e.g. Russian)', addBox: 'Kutu ekle|Add box', boxHint: 'Kutular bu destedeki tüm kartlarda görünür.|Boxes appear on every card in this deck.', boxExists: 'Bu adda bir kutu var|A box with this name exists', deckExists: 'Bu adda bir deste var|A deck with this name exists', deckSet: 'Deste ayarları|Deck settings', trans: 'Çeviri|Translation', showAns: 'Cevabı göster|Show answer', again: 'Tekrar|Again', fo_folder: 'Klasör|Folder', fo_top: 'Klasör yok (üst düzey)|No folder (top level)', fo_new: 'Yeni klasör|New folder', fo_name: 'Klasör adı|Folder name', fo_reorder: 'Sırala|Reorder', fo_done: 'Bitti|Done', fo_set: 'Klasör ayarları|Folder settings', fo_study: 'Hepsini çalış|Study all', fo_hint: 'Klasör silinirse desteler silinmez, üst düzeye çıkar.|Deleting a folder keeps its decks: they move to the top level.', fo_exists: 'Bu adda klasör var|A folder with this name exists', waitN: 'Sonraki kart|Next card in', waitS: 'Şimdi göster|Show now', hard: 'Zor|Hard', good: 'İyi|Good', easy: 'Kolay|Easy', done: 'Bugünlük bu kadar!|All done for now!', doneH: 'Bu destede şimdilik çalışılacak kart kalmadı.|No more cards to study in this deck right now.', back: 'Destelere dön|Back to decks', search: 'Kelime, çeviri veya açıklama ara…|Search word, translation or description…', all: 'Tüm desteler|All decks', cards: 'kart|cards', lang: 'Dil|Language', theme: 'Tema|Theme', th_auto: 'Otomatik|Auto', th_light: 'Açık|Light', th_dark: 'Koyu|Dark', th_ocean: 'Okyanus|Ocean', perDay: 'Günlük yeni kart|New cards per day', tagMgr: 'Etiketleri yönet|Manage tags', data: 'Yedek ve içe aktarma|Backup and import', export: 'Dışa aktar (JSON)|Export (JSON)', import: 'İçe aktar (JSON)|Import (JSON)', impOk: 'İçe aktarıldı: {a} yeni, {s} zaten vardı|Imported: {a} new, {s} already existed', impBad: 'Dosya okunamadı veya biçim tanınmadı|Could not read this file or format not recognised', noDl: 'Dışa aktarma burada kullanılamıyor|Export is not available here', saveErr: 'Tarayıcı depolaması dolu veya kapalı|Browser storage is full or disabled', mn: ' dk| min', dy: ' g| d', mo: ' ay| mo', emptyT: 'İlk destenle başla|Start with your first deck', emptyH: 'Deste oluştur, sonra kart ekle. Amisa verin varsa Ayarlar › İçe aktar.|Create a deck, then add cards. Have Amisa data? Settings › Import.', cnt: '{n} kart silinecek|{n} cards will be deleted', cardsT: 'Kartlar|Cards', dictT: 'Sözlük|Dictionary', sel: 'seçili|selected', moveTo: 'Desteye taşı…|Move to deck…', narrow: 'Aramayı daralt|Narrow the search', s_az: 'A–Z|A–Z', s_new: 'En yeni|Newest', s_deck: 'Deste|By deck', cloud: 'GitHub (data.json)|GitHub (data.json)', clLoad: 'data.json yükle|Load data.json', clTok: 'Token (yalnızca özel repo için, isteğe bağlı)|Token (private repo only, optional)', clErr: 'Yüklenemedi|Could not load' };
 var S = (function () { try {
     var j = JSON.parse(localStorage.getItem('sozkart'));
     if (j && j.decks)
         return j;
 }
 catch (e) { } return { lang: /^tr/i.test(navigator.language || '') ? 'tr' : 'en', theme: 'auto', per: 20, decks: [], cards: [], tags: [], nd: { d: '', n: 0 } }; })();
-var t = function (k) { return (D[k] || k).split('|')[S.lang == 'tr' ? 0 : 1]; }, save = function () { try {
+var t = function (k) { return (D[k] || k).split('|')[S.lang == 'tr' ? 0 : 1]; }, save = function () { fix(); try {
     localStorage.setItem('sozkart', JSON.stringify(S));
 }
 catch (e) {
     toast(t('saveErr'), 1);
 } };
 var V = 'decks', Q = null, F = null, DS = null, cur = null, lastG = [], BF = { q: '', d: '', g: '', s: 'az' }, TB = 'c', SEL = new MiniSet(), tt;
-var MD = $('#md'), norm = function (s) { return String(s).trim().replace(/\s+/g, ' ').toLocaleLowerCase('tr'); }, dup = function (w) { var n = norm(w); return n ? S.cards.find(function (c) { return norm(c.w) === n; }) : null; }, dk = function (id) { return S.decks.find(function (d) { return d.id === id; }); }, kids = function (p) { return S.decks.filter(function (d) { return d.p === p; }); }, sub = function (id) { return __spreadArray([id], kids(id).flatMap(function (k) { return sub(k.id); }), true); }, path = function (id) { var d = dk(id); return d ? (d.p ? path(d.p) + ' › ' : '') + d.name : ''; }, order = function (p, lv, all) {
-    if (p === void 0) { p = null; }
-    if (lv === void 0) { lv = 0; }
-    if (all === void 0) { all = 0; }
-    return kids(p).flatMap(function (d) { return __spreadArray([[d, lv]], (d.o === false && !all ? [] : order(d.id, lv + 1, all)), true); });
-};
+var MD = $('#md'), norm = function (s) { return String(s).trim().replace(/\s+/g, ' ').toLocaleLowerCase('tr'); }, dup = function (w) { var n = norm(w); return n ? S.cards.find(function (c) { return norm(c.w) === n; }) : null; }, dk = function (id) { return S.decks.find(function (d) { return d.id === id; }); }, fld = function (id) { return S.folders.find(function (f) { return f.id === id; }); }, fof = function (id) { return S.folders.find(function (f) { return f.ds.indexOf(id) > -1; }); }, sub = function (id) { var f = fld(id); return f ? f.ds.slice() : [id]; }, path = function (id) { var f = fld(id); if (f)
+    return f.name; var d = dk(id), o = d && fof(id); return d ? (o ? o.name + ' › ' : '') + d.name : ''; };
+function fix() {
+    if (!S.folders)
+        S.folders = [];
+    if (!S.top)
+        S.top = [];
+    if (S.decks.some(function (d) { return d.p; })) {
+        var nm_1 = function (d, n) { return d.p && dk(d.p) && n < 9 ? nm_1(dk(d.p), n + 1) + ' › ' + d.name : d.name; }, m_1 = {};
+        S.decks.forEach(function (d) { m_1[d.id] = nm_1(d, 0); });
+        S.decks.forEach(function (d) { d.name = m_1[d.id]; d.p = null; });
+    }
+    var sd = {}, sf = {};
+    S.folders.forEach(function (f) { f.ds = (f.ds || []).filter(function (id) { if (!dk(id) || sd[id])
+        return false; sd[id] = 1; return true; }); });
+    S.top = S.top.filter(function (x) { var k = String(x).slice(2); if (String(x).charAt(0) == 'f') {
+        if (!fld(k) || sf[k])
+            return false;
+        sf[k] = 1;
+        return true;
+    } if (!dk(k) || sd[k])
+        return false; sd[k] = 1; return true; });
+    S.folders.forEach(function (f) { if (!sf[f.id])
+        S.top.push('f:' + f.id); });
+    S.decks.forEach(function (d) { if (!sd[d.id])
+        S.top.push('d:' + d.id); });
+}
 var toast = function (m, bad) { var e = $('#ts'); e.textContent = m; e.className = 'on' + (bad ? ' bad' : ''); clearTimeout(tt); tt = setTimeout(function () { return e.className = ''; }, 2800); };
 var ovl = function (h) { MD.innerHTML = '<div class="box" role="dialog">' + h + '</div>'; MD.hidden = false; }, shut = function () { MD.hidden = true; MD.innerHTML = ''; go(); };
 var theme = function () { if (S.theme == 'auto')
@@ -242,15 +265,15 @@ function left() { return V == 'study' ? studyV() : decksV(); }
 function go() { hd(); $('#app').innerHTML = "<div class=\"tabs\"><button class=\"".concat(TB == 'c' ? 'pri' : '', "\" data-a=\"tab\" data-i=\"c\">").concat(t('cardsT'), "</button><button class=\"").concat(TB == 'd' ? 'pri' : '', "\" data-a=\"tab\" data-i=\"d\">").concat(t('dictT'), " (").concat(S.cards.length, ")</button></div><div class=\"ws\" data-t=\"").concat(TB, "\"><section class=\"pl\" id=\"pl\">").concat(left(), "</section><section class=\"pr\">").concat(dictV(), "</section></div>"); }
 function ref(x) { var e = $('#bl'), s = e.scrollTop; e.innerHTML = lst(); e.scrollTop = s; if (!x)
     $('#pl').innerHTML = left(); }
+var RO = false;
 function decksV() {
-    if (!S.decks.length)
-        return "<div class=\"pn\"><h2>".concat(t('emptyT'), "</h2><p class=\"mu\">").concat(t('emptyH'), "</p><button class=\"pri\" data-a=\"cl\">\u27F3 ").concat(t('clLoad'), "</button> <button data-a=\"nd\">\uFF0B ").concat(t('newDeck'), "</button><p class=\"mu\" id=\"cls\"></p></div>");
-    var rows = order().map(function (_a) {
-        var d = _a[0], lv = _a[1];
-        var c = counts(d.id), ch = kids(d.id).length;
-        return "<div class=\"dr\" style=\"padding-left:".concat(8 + lv * 22, "px\"><button class=\"ic\" data-a=\"tg\" data-i=\"").concat(d.id, "\">").concat(ch ? (d.o === false ? '▸' : '▾') : '·', "</button><button class=\"dn\" data-a=\"st\" data-i=\"").concat(d.id, "\">").concat(esc(d.name), "</button><span class=\"cn\"><i class=\"nw").concat(c.n ? '' : ' z', "\">").concat(c.n, "</i><i class=\"dc").concat(c.d ? '' : ' z', "\">").concat(c.d, "</i></span><button class=\"ic\" data-a=\"ad\" data-i=\"").concat(d.id, "\" title=\"").concat(t('add'), "\">\uFF0B</button><button class=\"ic\" data-a=\"ds\" data-i=\"").concat(d.id, "\" title=\"").concat(t('deckSet'), "\">\u22EF</button></div>");
-    }).join('');
-    return "<div class=\"pn\" style=\"padding:0\"><div class=\"dh\"><span style=\"flex:1;padding-left:8px\">".concat(t('decks'), "</span><span class=\"cn\"><i>").concat(t('new'), "</i><i>").concat(t('due'), "</i></span><span style=\"width:76px\"></span></div>").concat(rows, "</div><p><button data-a=\"nd\">\uFF0B ").concat(t('newDeck'), "</button></p>");
+    if (!S.decks.length && !S.folders.length)
+        return "<div class=\"pn\"><h2>".concat(t('emptyT'), "</h2><p class=\"mu\">").concat(t('emptyH'), "</p><button class=\"pri\" data-a=\"cl\">\u27F3 ").concat(t('clLoad'), "</button> <button data-a=\"nd\">\uFF0B ").concat(t('newDeck'), "</button> <button data-a=\"nF\">\uFF0B ").concat(t('fo_new'), "</button><p class=\"mu\" id=\"cls\"></p></div>");
+    var cn = function (id) { var c = counts(id); return "<span class=\"cn\"><i class=\"nw".concat(c.n ? '' : ' z', "\">").concat(c.n, "</i><i class=\"dc").concat(c.d ? '' : ' z', "\">").concat(c.d, "</i></span>"); }, ar = function (k) { return "<button class=\"ic\" data-a=\"mvu\" data-i=\"".concat(k, "\" title=\"\u2191\">\u25B2</button><button class=\"ic\" data-a=\"mvd\" data-i=\"").concat(k, "\" title=\"\u2193\">\u25BC</button>"); }, rowD = function (id, ind) { var d = dk(id); if (!d)
+        return ''; return "<div class=\"dr\" style=\"padding-left:".concat(8 + ind * 22, "px\"><button class=\"dn\" data-a=\"st\" data-i=\"").concat(id, "\">").concat(esc(d.name), "</button>").concat(cn(id)).concat(RO ? ar('d:' + id) : "<button class=\"ic\" data-a=\"ad\" data-i=\"".concat(id, "\" title=\"").concat(t('add'), "\">\uFF0B</button><button class=\"ic\" data-a=\"ds\" data-i=\"").concat(id, "\" title=\"").concat(t('deckSet'), "\">\u22EF</button>"), "</div>"); }, rowF = function (f) { return "<div class=\"dr fo\"><button class=\"ic\" data-a=\"tg\" data-i=\"".concat(f.id, "\">").concat(f.o === false ? '▸' : '▾', "</button><button class=\"dn\" data-a=\"tg\" data-i=\"").concat(f.id, "\">\uD83D\uDCC1 ").concat(esc(f.name), "</button>").concat(cn(f.id)).concat(RO ? ar('f:' + f.id) : "<button class=\"ic\" data-a=\"nd\" data-i=\"".concat(f.id, "\" title=\"").concat(t('newDeck'), "\">\uFF0B</button><button class=\"ic\" data-a=\"fs\" data-i=\"").concat(f.id, "\" title=\"").concat(t('fo_set'), "\">\u22EF</button>"), "</div>"); };
+    var rows = S.top.map(function (x) { var k = x.slice(2); if (x.charAt(0) == 'd')
+        return rowD(k, 0); var f = fld(k); return f ? rowF(f) + (f.o === false ? '' : f.ds.map(function (id) { return rowD(id, 1); }).join('')) : ''; }).join('');
+    return "<div class=\"pn\" style=\"padding:0\"><div class=\"dh\"><span style=\"flex:1;padding-left:8px\">".concat(t('decks'), "</span><span class=\"cn\"><i>").concat(t('new'), "</i><i>").concat(t('due'), "</i></span><span style=\"width:76px\"></span></div>").concat(rows, "</div><p><button data-a=\"nd\">\uFF0B ").concat(t('newDeck'), "</button> <button data-a=\"nF\">\uFF0B ").concat(t('fo_new'), "</button> <button data-a=\"ro\"").concat(RO ? ' class="pri"' : '', ">\u2195 ").concat(t(RO ? 'fo_done' : 'fo_reorder'), "</button></p>");
 }
 var dlab = function (d) { return (d && d.dl) || (d && norm(d.name) == 'sözlük' ? 'Значение' : t('desc')); };
 var WT;
@@ -289,15 +312,16 @@ function flt() {
         return 0; var w = fold(c.w); return w == q ? 0 : w.startsWith(q) ? 1 : w.includes(q) ? 2 : fold(Object.values(c.t).join(' ')).includes(q) ? 3 : 4; }, o = BF.s == 'new' ? function (a, b) { return b.at - a.at; } : BF.s == 'deck' ? function (a, b) { return path(a.k).localeCompare(path(b.k), 'tr') || a.w.localeCompare(b.w, 'tr'); } : function (a, b) { return a.w.localeCompare(b.w, 'tr'); };
     return r.sort(function (a, b) { return sc(a) - sc(b) || o(a, b); });
 }
-var dopt = function () { return order(null, 0, 1).map(function (_a) {
-    var d = _a[0], l = _a[1];
-    return "<option value=\"".concat(d.id, "\">").concat('\u00a0'.repeat(l * 2)).concat(esc(d.name), "</option>");
-}).join(''); };
+var dopt = function (fl, sel) { var op = function (id, x) { return "<option value=\"".concat(id, "\"").concat(id == sel ? ' selected' : '', ">").concat(x, "</option>"); }; return S.top.map(function (x) { var k = x.slice(2); if (x.charAt(0) == 'd') {
+    var d = dk(k);
+    return d ? op(k, esc(d.name)) : '';
+} var f = fld(k); if (!f)
+    return ''; var inn = f.ds.map(function (id) { var d = dk(id); return d ? op(id, '\u00a0\u00a0' + esc(d.name)) : ''; }).join(''); return fl ? op(f.id, '📁 ' + esc(f.name)) + inn : "<optgroup label=\"\uD83D\uDCC1 ".concat(esc(f.name), "\">").concat(inn, "</optgroup>"); }).join(''); };
 function lst() {
     var r = flt(), n = SEL.size, all = r.length && r.every(function (c) { return SEL.has(c.id); });
     return "<div class=\"bk\"><label><input type=\"checkbox\" id=\"sall\"".concat(all ? ' checked' : '', "> ").concat(r.length, " ").concat(t('cards'), "</label>").concat(n ? "<b>".concat(n, " ").concat(t('sel'), "</b><select id=\"bm\"><option value=\"\">").concat(t('moveTo'), "</option>").concat(dopt(), "</select><select id=\"btg\"><option value=\"\">\uFF0B ").concat(t('tags'), "</option>").concat(S.tags.map(function (g) { return "<option>".concat(esc(g), "</option>"); }).join(''), "</select><button class=\"dg\" data-a=\"bd\">").concat(t('delete'), "</button>") : '', "</div>") + r.slice(0, 200).map(function (c) { return "<div class=\"br\"><input type=\"checkbox\" data-c=\"".concat(c.id, "\"").concat(SEL.has(c.id) ? ' checked' : '', "><div class=\"bm2\" data-a=\"ec\" data-i=\"").concat(c.id, "\"><b>").concat(esc(c.w), "</b> <span class=\"mu\">").concat(esc(Object.values(c.t).filter(Boolean).join(' · ')), "</span><em>").concat(esc(path(c.k)), "</em>").concat(chips(c.g), "</div><button class=\"ic dg\" data-a=\"rd\" data-i=\"").concat(c.id, "\" title=\"").concat(t('delete'), "\">\u2715</button></div>"); }).join('') + (r.length > 200 ? "<p class=\"mu\">\u2026 ".concat(t('narrow'), "</p>") : '');
 }
-function dictV() { return "<div class=\"pn\"><h3 style=\"margin:0 0 8px\">".concat(t('dictT'), "</h3><div class=\"nb\"><input id=\"qw\" autocomplete=\"off\" placeholder=\"").concat(t('wordPh'), "\"><button class=\"pri\" data-a=\"qa\">\uFF0B ").concat(t('addB'), "</button></div><div id=\"qs\" class=\"stt\"></div><div class=\"fr\"><input id=\"bq\" placeholder=\"").concat(t('search'), "\" value=\"").concat(esc(BF.q), "\"><select id=\"bd\"><option value=\"\">").concat(t('all'), "</option>").concat(dopt().replace("value=\"".concat(BF.d, "\""), "value=\"".concat(BF.d, "\" selected")), "</select><select id=\"bg\"><option value=\"\">").concat(t('tags'), "</option>").concat(S.tags.map(function (g) { return "<option".concat(BF.g == g ? ' selected' : '', ">").concat(esc(g), "</option>"); }).join(''), "</select><select id=\"bs\">").concat(['az', 'new', 'deck'].map(function (x) { return "<option value=\"".concat(x, "\"").concat(BF.s == x ? ' selected' : '', ">").concat(t('s_' + x), "</option>"); }).join(''), "</select></div><div id=\"bl\">").concat(lst(), "</div></div>"); }
+function dictV() { return "<div class=\"pn\"><h3 style=\"margin:0 0 8px\">".concat(t('dictT'), "</h3><div class=\"nb\"><input id=\"qw\" autocomplete=\"off\" placeholder=\"").concat(t('wordPh'), "\"><button class=\"pri\" data-a=\"qa\">\uFF0B ").concat(t('addB'), "</button></div><div id=\"qs\" class=\"stt\"></div><div class=\"fr\"><input id=\"bq\" placeholder=\"").concat(t('search'), "\" value=\"").concat(esc(BF.q), "\"><select id=\"bd\"><option value=\"\">").concat(t('all'), "</option>").concat(dopt(1).replace("value=\"".concat(BF.d, "\""), "value=\"".concat(BF.d, "\" selected")), "</select><select id=\"bg\"><option value=\"\">").concat(t('tags'), "</option>").concat(S.tags.map(function (g) { return "<option".concat(BF.g == g ? ' selected' : '', ">").concat(esc(g), "</option>"); }).join(''), "</select><select id=\"bs\">").concat(['az', 'new', 'deck'].map(function (x) { return "<option value=\"".concat(x, "\"").concat(BF.s == x ? ' selected' : '', ">").concat(t('s_' + x), "</option>"); }).join(''), "</select></div><div id=\"bl\">").concat(lst(), "</div></div>"); }
 function qchk() { var e = $('#qs'), i = $('#qw'), x = dup(i.value); if (!i.value.trim()) {
     e.className = 'stt';
     e.textContent = '';
@@ -318,13 +342,10 @@ var sync = function () { F.w = $('#fw').value; F.d = $('#fx').value; MD.querySel
 var tagsH = function () { return S.tags.map(function (g) { return "<button class=\"tg".concat(F.g.includes(g) ? ' on' : '', "\" data-a=\"tgl\" data-i=\"").concat(esc(g), "\">").concat(esc(g), "</button>"); }).join('') || "<span class=\"mu\">".concat(t('noTags'), "</span>"); };
 function formH() {
     var d = dk(F.deck);
-    return "<h3>".concat(t(F.id ? 'edit' : 'add'), "</h3><label>").concat(t('deck'), "<select id=\"fd\">").concat(order(null, 0, 1).map(function (_a) {
-        var x = _a[0], l = _a[1];
-        return "<option value=\"".concat(x.id, "\"").concat(x.id == F.deck ? ' selected' : '', ">").concat('\u00a0'.repeat(l * 2)).concat(esc(x.name), "</option>");
-    }).join(''), "</select></label>\n<label>").concat(t('word'), "<input id=\"fw\" autocomplete=\"off\" data-en=\"sv\" value=\"").concat(esc(F.w), "\" placeholder=\"").concat(t('wordPh'), "\"></label><div id=\"fs\" class=\"stt\"></div>\n<div id=\"ff\">").concat(d.f.map(function (f) { return "<label>".concat(esc(f.n), "<input data-f=\"").concat(f.id, "\" data-en=\"sv\" value=\"").concat(esc(F.v[f.id] || ''), "\"></label>"); }).join(''), "</div>\n<div class=\"nb\"><input id=\"nf\" data-en=\"af\" placeholder=\"").concat(t('boxPh'), "\"><button data-a=\"af\">\uFF0B ").concat(t('addBox'), "</button></div>\n<label>").concat(t('desc'), "<textarea id=\"fx\" rows=\"3\">").concat(esc(F.d), "</textarea></label>\n<div class=\"lb\">").concat(t('tags'), "</div><div id=\"fg\">").concat(tagsH(), "</div><div class=\"nb\"><input id=\"nt\" data-en=\"at\" placeholder=\"").concat(t('newTag'), "\"><button data-a=\"at\">\uFF0B</button></div>\n<div class=\"ac\"><button data-a=\"sh\">").concat(t('close'), "</button>").concat(F.id ? "<button class=\"dg\" data-a=\"dc\" data-i=\"".concat(F.id, "\">").concat(t('delete'), "</button>") : '', "<button class=\"pri\" data-a=\"sv\">").concat(t(F.id ? 'save' : 'addB'), "</button></div>");
+    return "<h3>".concat(t(F.id ? 'edit' : 'add'), "</h3><label>").concat(t('deck'), "<select id=\"fd\">").concat(dopt(0, F.deck), "</select></label>\n<label>").concat(t('word'), "<input id=\"fw\" autocomplete=\"off\" data-en=\"sv\" value=\"").concat(esc(F.w), "\" placeholder=\"").concat(t('wordPh'), "\"></label><div id=\"fs\" class=\"stt\"></div>\n<div id=\"ff\">").concat(d.f.map(function (f) { return "<label>".concat(esc(f.n), "<input data-f=\"").concat(f.id, "\" data-en=\"sv\" value=\"").concat(esc(F.v[f.id] || ''), "\"></label>"); }).join(''), "</div>\n<div class=\"nb\"><input id=\"nf\" data-en=\"af\" placeholder=\"").concat(t('boxPh'), "\"><button data-a=\"af\">\uFF0B ").concat(t('addBox'), "</button></div>\n<label>").concat(t('desc'), "<textarea id=\"fx\" rows=\"3\">").concat(esc(F.d), "</textarea></label>\n<div class=\"lb\">").concat(t('tags'), "</div><div id=\"fg\">").concat(tagsH(), "</div><div class=\"nb\"><input id=\"nt\" data-en=\"at\" placeholder=\"").concat(t('newTag'), "\"><button data-a=\"at\">\uFF0B</button></div>\n<div class=\"ac\"><button data-a=\"sh\">").concat(t('close'), "</button>").concat(F.id ? "<button class=\"dg\" data-a=\"dc\" data-i=\"".concat(F.id, "\">").concat(t('delete'), "</button>") : '', "<button class=\"pri\" data-a=\"sv\">").concat(t(F.id ? 'save' : 'addB'), "</button></div>");
 }
 function cardForm(deck, card, pre) { if (!S.decks.length)
-    return A.nd(); F = card ? { id: card.id, deck: card.k, w: card.w, v: __assign({}, card.t), d: card.d, g: __spreadArray([], card.g, true) } : { deck: dk(deck) ? deck : dk(cur) ? cur : order(null, 0, 1)[0][0].id, w: pre || '', v: {}, d: '', g: __spreadArray([], lastG, true) }; ovl(formH()); setTimeout(function () { (F.w && MD.querySelector('[data-f]') || $('#fw')).focus(); chk(); }, 30); }
+    return A.nd(); F = card ? { id: card.id, deck: card.k, w: card.w, v: __assign({}, card.t), d: card.d, g: __spreadArray([], card.g, true) } : { deck: dk(deck) ? deck : dk(cur) ? cur : S.decks[0].id, w: pre || '', v: {}, d: '', g: __spreadArray([], lastG, true) }; ovl(formH()); setTimeout(function () { (F.w && MD.querySelector('[data-f]') || $('#fw')).focus(); chk(); }, 30); }
 function chk() { var e = $('#fs'), i = $('#fw'); if (!e || !F)
     return; var x = dup(i.value); if (!i.value.trim()) {
     e.className = 'stt';
@@ -350,7 +371,36 @@ A.add = function () { return cardForm(Q ? Q.deck : cur); };
 A.ad = function (id) { return cardForm(id); };
 A.sh = function () { return shut(); };
 A.ec = function (id) { return cardForm(null, S.cards.find(function (c) { return c.id == id; })); };
-A.tg = function (id) { var d = dk(id); d.o = d.o === false; save(); go(); };
+A.tg = function (id) { var f = fld(id); if (f) {
+    f.o = f.o === false;
+    save();
+    go();
+} };
+A.ro = function () { RO = !RO; go(); };
+A.mv = function (k, dir) { var arr = S.top, key = k; if (k.charAt(0) == 'd') {
+    var f = fof(k.slice(2));
+    if (f) {
+        arr = f.ds;
+        key = k.slice(2);
+    }
+} var i = arr.indexOf(key), j = i + dir; if (i < 0 || j < 0 || j >= arr.length)
+    return; var x = arr[i]; arr[i] = arr[j]; arr[j] = x; save(); go(); };
+A.mvu = function (k) { return A.mv(k, -1); };
+A.mvd = function (k) { return A.mv(k, 1); };
+A.nF = function () { ovl("<h3>".concat(t('fo_new'), "</h3><label>").concat(t('fo_name'), "<input id=\"fn\" data-en=\"mkF\"></label><div class=\"ac\"><button data-a=\"sh\">").concat(t('cancel'), "</button><button class=\"pri\" data-a=\"mkF\">").concat(t('create'), "</button></div>")); $('#fn').focus(); };
+A.mkF = function () { var n = $('#fn').value.trim(); if (!n)
+    return; if (S.folders.some(function (f) { return norm(f.name) == norm(n); }))
+    return toast(t('fo_exists'), 1); var f = { id: uid(), name: n, ds: [], o: true }; S.folders.push(f); save(); shut(); };
+var FS = null;
+A.fs = function (id) { FS = fld(id); ovl("<h3>".concat(t('fo_set'), "</h3><label>").concat(t('fo_name'), "<input id=\"fn\" data-en=\"fsv\" value=\"").concat(esc(FS.name), "\"></label><p class=\"mu\">").concat(t('fo_hint'), "</p><div class=\"ac\"><button class=\"dg\" data-a=\"fdl\">").concat(t('delete'), "</button><button data-a=\"fst\">").concat(t('fo_study'), "</button><button class=\"pri\" data-a=\"fsv\">").concat(t('save'), "</button></div>")); };
+A.fsv = function () { var n = $('#fn').value.trim(); if (n && !S.folders.some(function (f) { return f !== FS && norm(f.name) == norm(n); }))
+    FS.name = n; save(); shut(); };
+A.fst = function () { var id = FS.id; MD.hidden = true; MD.innerHTML = ''; A.st(id); };
+A.fdl = function (_, b) { if (!b.getAttribute('data-s')) {
+    b.setAttribute('data-s', 1);
+    b.textContent = t('sure');
+    return;
+} var i = S.top.indexOf('f:' + FS.id); S.top.splice.apply(S.top, [i, 1].concat(FS.ds.map(function (x) { return 'd:' + x; }))); S.folders = S.folders.filter(function (f) { return f !== FS; }); save(); shut(); };
 A.st = function (id) { var ids = new MiniSet(sub(id)), now = Date.now(), due = S.cards.filter(function (c) { return ids.has(c.k) && c.st != 'new' && c.due <= now; }).sort(function (a, b) { return a.due - b.due; }), nw = S.cards.filter(function (c) { return ids.has(c.k) && c.st == 'new'; }).slice(0, remNew()); cur = id; Q = { deck: id, q: __spreadArray(__spreadArray([], due, true), nw, true).map(function (c) { return c.id; }), show: 0 }; V = 'study'; go(); };
 A.sa = function () { if (Q && Q.q.length) {
     var c = S.cards.find(function (x) { return x.id == Q.q[0]; });
@@ -421,14 +471,15 @@ A.dc = function (id, b) { if (!b.getAttribute('data-s')) {
     return;
 } S.cards = S.cards.filter(function (c) { return c.id != id; }); if (Q)
     Q.q = Q.q.filter(function (x) { return x != id; }); save(); toast(t('deleted')); shut(); };
-A.nd = function (p) { ovl("<h3>".concat(t(p ? 'subdeck' : 'newDeck'), "</h3><label>").concat(t('deckName'), "<input id=\"dn\" data-en=\"mk\" data-p=\"").concat(p || '', "\"></label><div class=\"ac\"><button data-a=\"sh\">").concat(t('cancel'), "</button><button class=\"pri\" data-a=\"mk\">").concat(t('create'), "</button></div>")); $('#dn').focus(); };
+A.nd = function (p) { ovl("<h3>".concat(t('newDeck'), "</h3><label>").concat(t('deckName'), "<input id=\"dn\" data-en=\"mk\" data-p=\"").concat(p || '', "\"></label><div class=\"ac\"><button data-a=\"sh\">").concat(t('cancel'), "</button><button class=\"pri\" data-a=\"mk\">").concat(t('create'), "</button></div>")); $('#dn').focus(); };
 A.mk = function () { var i = $('#dn'), n = i.value.trim(); if (!n)
-    return; var p = i.getAttribute('data-p') || null, pd = p && dk(p); if (S.decks.some(function (d) { return d.p === p && norm(d.name) == norm(n); }))
-    return toast(t('deckExists'), 1); var d = { id: uid(), name: n, p: p, f: pd ? pd.f.map(function (f) { return (__assign({}, f)); }) : [{ id: uid(), n: t('trans') }] }; S.decks.push(d); if (pd)
-    pd.o = true; cur = d.id; save(); shut(); };
+    return; var p = i.getAttribute('data-p') || null, pf = p && fld(p); if (S.decks.some(function (d) { return norm(d.name) == norm(n); }))
+    return toast(t('deckExists'), 1); var d = { id: uid(), name: n, p: null, f: [{ id: uid(), n: t('trans') }] }; S.decks.push(d); if (pf) {
+    pf.ds.push(d.id);
+    pf.o = true;
+} cur = d.id; save(); shut(); };
 var bxH = function (d) { return d.f.map(function (f) { return "<div class=\"nb\"><input data-bf=\"".concat(f.id, "\" value=\"").concat(esc(f.n), "\"><button data-a=\"rb\" data-i=\"").concat(f.id, "\" title=\"").concat(t('delete'), "\">\u2715</button></div>"); }).join(''); };
-A.ds = function (id) { DS = dk(id); ovl("<h3>".concat(t('deckSet'), "</h3><label>").concat(t('deckName'), "<input id=\"dn\" data-en=\"rn\" value=\"").concat(esc(DS.name), "\"></label><label>").concat(t('descLbl'), "<input id=\"dl\" value=\"").concat(esc(DS.dl || ''), "\" placeholder=\"").concat(esc(dlab(DS)), "\"></label><div class=\"lb\">").concat(t('boxes'), "</div><div id=\"bx\">").concat(bxH(DS), "</div><div class=\"nb\"><input id=\"nf\" data-en=\"ab\" placeholder=\"").concat(t('boxPh'), "\"><button data-a=\"ab\">\uFF0B ").concat(t('addBox'), "</button></div><p class=\"mu\">").concat(t('boxHint'), "</p><div class=\"ac\"><button class=\"dg\" data-a=\"dd\">").concat(t('delete'), "</button><button data-a=\"sd\">\uFF0B ").concat(t('subdeck'), "</button><button class=\"pri\" data-a=\"rn\">").concat(t('save'), "</button></div>")); };
-A.sd = function () { return A.nd(DS.id); };
+A.ds = function (id) { DS = dk(id); ovl("<h3>".concat(t('deckSet'), "</h3><label>").concat(t('deckName'), "<input id=\"dn\" data-en=\"rn\" value=\"").concat(esc(DS.name), "\"></label><label>").concat(t('descLbl'), "<input id=\"dl\" value=\"").concat(esc(DS.dl || ''), "\" placeholder=\"").concat(esc(dlab(DS)), "\"></label><label>").concat(t('fo_folder'), "<select id=\"dfo\"><option value=\"\">").concat(t('fo_top'), "</option>").concat(S.folders.map(function (f) { return "<option value=\"".concat(f.id, "\"").concat((fof(DS.id) || {}).id === f.id ? ' selected' : '', ">\uD83D\uDCC1 ").concat(esc(f.name), "</option>"); }).join(''), "</select></label><div class=\"lb\">").concat(t('boxes'), "</div><div id=\"bx\">").concat(bxH(DS), "</div><div class=\"nb\"><input id=\"nf\" data-en=\"ab\" placeholder=\"").concat(t('boxPh'), "\"><button data-a=\"ab\">\uFF0B ").concat(t('addBox'), "</button></div><p class=\"mu\">").concat(t('boxHint'), "</p><div class=\"ac\"><button class=\"dg\" data-a=\"dd\">").concat(t('delete'), "</button><button class=\"pri\" data-a=\"rn\">").concat(t('save'), "</button></div>")); };
 A.ab = function () { var i = $('#nf'), n = i.value.trim(); if (!n)
     return; if (DS.f.some(function (f) { return norm(f.n) == norm(n); }))
     return toast(t('boxExists'), 1); DS.f.push({ id: uid(), n: n }); i.value = ''; save(); $('#bx').innerHTML = bxH(DS); };
@@ -440,7 +491,21 @@ A.rb = function (id, b) { if (!b.getAttribute('data-s')) {
     delete c.t[id]; }); save(); $('#bx').innerHTML = bxH(DS); };
 A.rn = function () { var n = $('#dn').value.trim(); if (n)
     DS.name = n; if ($('#dl'))
-    DS.dl = $('#dl').value.trim(); MD.querySelectorAll('[data-bf]').forEach(function (i) { var f = DS.f.find(function (f) { return f.id == i.getAttribute('data-bf'); }); if (f && i.value.trim())
+    DS.dl = $('#dl').value.trim(); if ($('#dfo')) {
+    var nf = $('#dfo').value, of = fof(DS.id);
+    if ((of ? of.id : '') !== nf) {
+        if (of)
+            of.ds = of.ds.filter(function (x) { return x != DS.id; });
+        else
+            S.top = S.top.filter(function (x) { return x != 'd:' + DS.id; });
+        if (nf) {
+            fld(nf).ds.push(DS.id);
+            fld(nf).o = true;
+        }
+        else
+            S.top.push('d:' + DS.id);
+    }
+} MD.querySelectorAll('[data-bf]').forEach(function (i) { var f = DS.f.find(function (f) { return f.id == i.getAttribute('data-bf'); }); if (f && i.value.trim())
     f.n = i.value.trim(); }); save(); shut(); };
 A.dd = function (_, b) { var ids = sub(DS.id); if (!b.getAttribute('data-s')) {
     b.setAttribute('data-s', 1);
@@ -537,7 +602,7 @@ function impT(x) {
         return;
     } S.cards.push({ id: uid(), k: k, w: String(w).trim(), t: tr, d: d, g: g, st: 'new', ivl: 0, ef: 2.5, due: 0, at: Date.now() }); a++; };
     if (Array.isArray(j.dicts)) {
-        var dk0 = S.decks.find(function (d) { return d.p === null && d.name == 'Sözlük'; });
+        var dk0 = S.decks.find(function (d) { return d.name == 'Sözlük'; });
         if (!dk0) {
             dk0 = { id: uid(), name: 'Sözlük', p: null, f: [] };
             S.decks.push(dk0);
@@ -566,8 +631,14 @@ function impT(x) {
         }
     }
     else if (Array.isArray(j.decks) && Array.isArray(j.cards)) {
-        j.decks.forEach(function (d) { if (!dk(d.id))
-            S.decks.push(d); });
+        (j.folders || []).forEach(function (f) { if (!fld(f.id))
+            S.folders.push({ id: f.id, name: f.name, ds: [], o: true }); });
+        j.decks.forEach(function (d) { if (!dk(d.id)) {
+            S.decks.push(d);
+            var fo = (j.folders || []).filter(function (f) { return (f.ds || []).indexOf(d.id) > -1; })[0];
+            if (fo && fld(fo.id))
+                fld(fo.id).ds.push(d.id);
+        } });
         (j.tags || []).forEach(function (g) { if (!S.tags.includes(g))
             S.tags.push(g); });
         j.cards.forEach(function (c) { if (!c.w || dup(c.w) || !dk(c.k))
@@ -716,6 +787,8 @@ addEventListener('keydown', function (e) {
     else if (K(e) == 'Escape')
         A.hm();
 });
+fix();
+save();
 theme();
 go();
 if (!S.cards.length && /^https?:/.test(location.protocol))
