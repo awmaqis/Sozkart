@@ -98,6 +98,7 @@ header>*{margin:3px}
 .tx{white-space:pre-line;word-wrap:break-word;color:#181c22}html[data-theme=dark] .tx{white-space:pre-line;word-wrap:break-word;color:#e8ebf0}html[data-theme=ocean] .tx{white-space:pre-line;word-wrap:break-word;color:#e6f1f8}
 .fo .dn{font-weight:700}
 .fo{background:rgba(127,127,127,.08)}
+#sy{font-size:13px;white-space:nowrap}
 input,select,textarea{-webkit-box-sizing:border-box;box-sizing:border-box}
 .bt button{display:block;text-align:center}.bt small{display:block}
 .fr{display:block;margin:-3px}.fr>*{display:inline-block;vertical-align:top;width:31.5%;margin:3px .8%;-webkit-box-flex:0;-webkit-flex:none;flex:none}.fr>input{display:block;width:98.4%}
@@ -172,19 +173,19 @@ function CL(e, c, on) { var r = ' ' + (e.className || '') + ' '; while (r.indexO
 function K(e) { if (e.key)
     return e.key; var c = e.keyCode || e.which; return c == 13 ? 'Enter' : c == 27 ? 'Escape' : c == 32 ? ' ' : (c >= 49 && c <= 52) ? String.fromCharCode(c) : (c >= 97 && c <= 100) ? String(c - 96) : ''; }
 var $ = function (s) { return document.querySelector(s); }, uid = function () { return Math.random().toString(36).slice(2, 9); }, esc = function (s) { return String(s !== null && s !== void 0 ? s : '').replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]); }); };
-var D = { add: 'Kart ekle|Add card', addB: 'Ekle|Add', edit: 'Kartı düzenle|Edit card', browse: 'Gözat|Browse', decks: 'Desteler|Decks', set: 'Ayarlar|Settings', new: 'Yeni|New', due: 'Tekrar|Due', newDeck: 'Yeni deste|New deck', subdeck: 'Alt deste|Subdeck', deckName: 'Deste adı|Deck name', create: 'Oluştur|Create', cancel: 'İptal|Cancel', close: 'Kapat|Close', save: 'Kaydet|Save', delete: 'Sil|Delete', sure: 'Emin misin?|Sure?', deleted: 'Silindi|Deleted', saved: 'Kaydedildi|Saved', added: 'eklendi|added', deck: 'Deste|Deck', word: 'Kelime|Word', wordPh: 'Eklenecek kelime…|Word to add…', avail: 'Bu kelime sözlükte yok, eklenebilir|Not in the dictionary yet, you can add it', exists: 'Bu kelime zaten sözlükte var|This word is already in the dictionary', desc: 'Açıklama|Description', descLbl: 'Açıklama başlığı|Description label', tags: 'Etiketler|Tags', newTag: 'Yeni etiket…|New tag…', noTags: 'Henüz etiket yok, aşağıdan ekle|No tags yet, add one below', boxes: 'Çeviri kutuları|Translation boxes', boxPh: 'Yeni çeviri kutusu adı (örn. Rusça)|New box name (e.g. Russian)', addBox: 'Kutu ekle|Add box', boxHint: 'Kutular bu destedeki tüm kartlarda görünür.|Boxes appear on every card in this deck.', boxExists: 'Bu adda bir kutu var|A box with this name exists', deckExists: 'Bu adda bir deste var|A deck with this name exists', deckSet: 'Deste ayarları|Deck settings', trans: 'Çeviri|Translation', showAns: 'Cevabı göster|Show answer', again: 'Tekrar|Again', fo_folder: 'Klasör|Folder', fo_top: 'Klasör yok (üst düzey)|No folder (top level)', fo_new: 'Yeni klasör|New folder', fo_name: 'Klasör adı|Folder name', fo_reorder: 'Sırala|Reorder', fo_done: 'Bitti|Done', fo_set: 'Klasör ayarları|Folder settings', fo_study: 'Hepsini çalış|Study all', fo_hint: 'Klasör silinirse desteler silinmez, üst düzeye çıkar.|Deleting a folder keeps its decks: they move to the top level.', fo_exists: 'Bu adda klasör var|A folder with this name exists', waitN: 'Sonraki kart|Next card in', waitS: 'Şimdi göster|Show now', hard: 'Zor|Hard', good: 'İyi|Good', easy: 'Kolay|Easy', done: 'Bugünlük bu kadar!|All done for now!', doneH: 'Bu destede şimdilik çalışılacak kart kalmadı.|No more cards to study in this deck right now.', back: 'Destelere dön|Back to decks', search: 'Kelime, çeviri veya açıklama ara…|Search word, translation or description…', all: 'Tüm desteler|All decks', cards: 'kart|cards', lang: 'Dil|Language', theme: 'Tema|Theme', th_auto: 'Otomatik|Auto', th_light: 'Açık|Light', th_dark: 'Koyu|Dark', th_ocean: 'Okyanus|Ocean', perDay: 'Günlük yeni kart|New cards per day', tagMgr: 'Etiketleri yönet|Manage tags', data: 'Yedek ve içe aktarma|Backup and import', export: 'Dışa aktar (JSON)|Export (JSON)', import: 'İçe aktar (JSON)|Import (JSON)', impOk: 'İçe aktarıldı: {a} yeni, {s} zaten vardı|Imported: {a} new, {s} already existed', impBad: 'Dosya okunamadı veya biçim tanınmadı|Could not read this file or format not recognised', noDl: 'Dışa aktarma burada kullanılamıyor|Export is not available here', saveErr: 'Tarayıcı depolaması dolu veya kapalı|Browser storage is full or disabled', mn: ' dk| min', dy: ' g| d', mo: ' ay| mo', emptyT: 'İlk destenle başla|Start with your first deck', emptyH: 'Deste oluştur, sonra kart ekle. Amisa verin varsa Ayarlar › İçe aktar.|Create a deck, then add cards. Have Amisa data? Settings › Import.', cnt: '{n} kart silinecek|{n} cards will be deleted', cardsT: 'Kartlar|Cards', dictT: 'Sözlük|Dictionary', sel: 'seçili|selected', moveTo: 'Desteye taşı…|Move to deck…', narrow: 'Aramayı daralt|Narrow the search', s_az: 'A–Z|A–Z', s_new: 'En yeni|Newest', s_deck: 'Deste|By deck', cloud: 'GitHub (data.json)|GitHub (data.json)', clLoad: 'data.json yükle|Load data.json', clTok: 'Token (yalnızca özel repo için, isteğe bağlı)|Token (private repo only, optional)', clErr: 'Yüklenemedi|Could not load' };
+var D = { add: 'Kart ekle|Add card', addB: 'Ekle|Add', edit: 'Kartı düzenle|Edit card', browse: 'Gözat|Browse', decks: 'Desteler|Decks', set: 'Ayarlar|Settings', new: 'Yeni|New', due: 'Tekrar|Due', newDeck: 'Yeni deste|New deck', subdeck: 'Alt deste|Subdeck', deckName: 'Deste adı|Deck name', create: 'Oluştur|Create', cancel: 'İptal|Cancel', close: 'Kapat|Close', save: 'Kaydet|Save', delete: 'Sil|Delete', sure: 'Emin misin?|Sure?', deleted: 'Silindi|Deleted', saved: 'Kaydedildi|Saved', added: 'eklendi|added', deck: 'Deste|Deck', word: 'Kelime|Word', wordPh: 'Eklenecek kelime…|Word to add…', avail: 'Bu kelime sözlükte yok, eklenebilir|Not in the dictionary yet, you can add it', exists: 'Bu kelime zaten sözlükte var|This word is already in the dictionary', desc: 'Açıklama|Description', descLbl: 'Açıklama başlığı|Description label', tags: 'Etiketler|Tags', newTag: 'Yeni etiket…|New tag…', noTags: 'Henüz etiket yok, aşağıdan ekle|No tags yet, add one below', boxes: 'Çeviri kutuları|Translation boxes', boxPh: 'Yeni çeviri kutusu adı (örn. Rusça)|New box name (e.g. Russian)', addBox: 'Kutu ekle|Add box', boxHint: 'Kutular bu destedeki tüm kartlarda görünür.|Boxes appear on every card in this deck.', boxExists: 'Bu adda bir kutu var|A box with this name exists', deckExists: 'Bu adda bir deste var|A deck with this name exists', deckSet: 'Deste ayarları|Deck settings', trans: 'Çeviri|Translation', showAns: 'Cevabı göster|Show answer', again: 'Tekrar|Again', sy_off: 'Token yok: değişiklikler yalnızca bu cihazda kalır|No token: changes stay on this device', sy_ok: 'Eşitlendi ✓|Synced ✓', sy_busy: 'Eşitleniyor…|Syncing…', sy_dirty: 'Gönderilmemiş değişiklikler var|Unsynced changes', sy_err: 'Hata|Error', sy_help: 'Token: GitHub → Settings → Developer settings → Fine-grained tokens; yalnızca bu repo, Contents: Read and write.|Token: GitHub → Settings → Developer settings → Fine-grained tokens; this repo only, Contents: Read and write.', fo_folder: 'Klasör|Folder', fo_top: 'Klasör yok (üst düzey)|No folder (top level)', fo_new: 'Yeni klasör|New folder', fo_name: 'Klasör adı|Folder name', fo_reorder: 'Sırala|Reorder', fo_done: 'Bitti|Done', fo_set: 'Klasör ayarları|Folder settings', fo_study: 'Hepsini çalış|Study all', fo_hint: 'Klasör silinirse desteler silinmez, üst düzeye çıkar.|Deleting a folder keeps its decks: they move to the top level.', fo_exists: 'Bu adda klasör var|A folder with this name exists', waitN: 'Sonraki kart|Next card in', waitS: 'Şimdi göster|Show now', hard: 'Zor|Hard', good: 'İyi|Good', easy: 'Kolay|Easy', done: 'Bugünlük bu kadar!|All done for now!', doneH: 'Bu destede şimdilik çalışılacak kart kalmadı.|No more cards to study in this deck right now.', back: 'Destelere dön|Back to decks', search: 'Kelime, çeviri veya açıklama ara…|Search word, translation or description…', all: 'Tüm desteler|All decks', cards: 'kart|cards', lang: 'Dil|Language', theme: 'Tema|Theme', th_auto: 'Otomatik|Auto', th_light: 'Açık|Light', th_dark: 'Koyu|Dark', th_ocean: 'Okyanus|Ocean', perDay: 'Günlük yeni kart|New cards per day', tagMgr: 'Etiketleri yönet|Manage tags', data: 'Yedek ve içe aktarma|Backup and import', export: 'Dışa aktar (JSON)|Export (JSON)', import: 'İçe aktar (JSON)|Import (JSON)', impOk: 'İçe aktarıldı: {a} yeni, {s} zaten vardı|Imported: {a} new, {s} already existed', impBad: 'Dosya okunamadı veya biçim tanınmadı|Could not read this file or format not recognised', noDl: 'Dışa aktarma burada kullanılamıyor|Export is not available here', saveErr: 'Tarayıcı depolaması dolu veya kapalı|Browser storage is full or disabled', mn: ' dk| min', dy: ' g| d', mo: ' ay| mo', emptyT: 'İlk destenle başla|Start with your first deck', emptyH: 'Deste oluştur, sonra kart ekle. Amisa verin varsa Ayarlar › İçe aktar.|Create a deck, then add cards. Have Amisa data? Settings › Import.', cnt: '{n} kart silinecek|{n} cards will be deleted', cardsT: 'Kartlar|Cards', dictT: 'Sözlük|Dictionary', sel: 'seçili|selected', moveTo: 'Desteye taşı…|Move to deck…', narrow: 'Aramayı daralt|Narrow the search', s_az: 'A–Z|A–Z', s_new: 'En yeni|Newest', s_deck: 'Deste|By deck', cloud: 'GitHub eşitleme|GitHub sync', clLoad: 'Şimdi eşitle|Sync now', clTok: 'GitHub token (değişiklikleri kaydetmek için)|GitHub token (needed to save changes)', clErr: 'Yüklenemedi|Could not load' };
 var S = (function () { try {
     var j = JSON.parse(localStorage.getItem('sozkart'));
     if (j && j.decks)
         return j;
 }
 catch (e) { } return { lang: /^tr/i.test(navigator.language || '') ? 'tr' : 'en', theme: 'auto', per: 20, decks: [], cards: [], tags: [], nd: { d: '', n: 0 } }; })();
-var t = function (k) { return (D[k] || k).split('|')[S.lang == 'tr' ? 0 : 1]; }, save = function () { fix(); try {
+var t = function (k) { return (D[k] || k).split('|')[S.lang == 'tr' ? 0 : 1]; }, persist = function () { try {
     localStorage.setItem('sozkart', JSON.stringify(S));
 }
 catch (e) {
     toast(t('saveErr'), 1);
-} };
+} }, save = function () { fix(); stamp(); SY.dirty = true; SY.ver++; persist(); sched(); };
 var V = 'decks', Q = null, F = null, DS = null, cur = null, lastG = [], BF = { q: '', d: '', g: '', s: 'az' }, TB = 'c', SEL = new MiniSet(), tt;
 var MD = $('#md'), norm = function (s) { return String(s).trim().replace(/\s+/g, ' ').toLocaleLowerCase('tr'); }, dup = function (w) { var n = norm(w); return n ? S.cards.find(function (c) { return norm(c.w) === n; }) : null; }, dk = function (id) { return S.decks.find(function (d) { return d.id === id; }); }, fld = function (id) { return S.folders.find(function (f) { return f.id === id; }); }, fof = function (id) { return S.folders.find(function (f) { return f.ds.indexOf(id) > -1; }); }, sub = function (id) { var f = fld(id); return f ? f.ds.slice() : [id]; }, path = function (id) { var f = fld(id); if (f)
     return f.name; var d = dk(id), o = d && fof(id); return d ? (o ? o.name + ' › ' : '') + d.name : ''; };
@@ -214,7 +215,10 @@ function fix() {
         S.top.push('d:' + d.id); });
 }
 var toast = function (m, bad) { var e = $('#ts'); e.textContent = m; e.className = 'on' + (bad ? ' bad' : ''); clearTimeout(tt); tt = setTimeout(function () { return e.className = ''; }, 2800); };
-var ovl = function (h) { MD.innerHTML = '<div class="box" role="dialog">' + h + '</div>'; MD.hidden = false; }, shut = function () { MD.hidden = true; MD.innerHTML = ''; go(); };
+var ovl = function (h) { MD.innerHTML = '<div class="box" role="dialog">' + h + '</div>'; MD.hidden = false; }, shut = function () { MD.hidden = true; MD.innerHTML = ''; go(); if (SY.wait) {
+    SY.wait = 0;
+    kick(1);
+} };
 var theme = function () { if (S.theme == 'auto')
     document.documentElement.removeAttribute('data-theme');
 else
@@ -260,7 +264,7 @@ function sched(c, q) {
 }
 var fmt = function (ms) { return ms < 36e5 ? Math.max(1, Math.round(ms / 6e4)) + t('mn') : ms < 864e5 * 30 ? Math.round(ms / 864e5) + t('dy') : (ms / 864e5 / 30).toFixed(1).replace(/\.0$/, '') + t('mo'); };
 var chips = function (a) { return a.map(function (g) { return "<span class=\"tg\">".concat(esc(g), "</span>"); }).join(''); };
-function hd() { $('#hd').innerHTML = "<b class=\"lg\">S\u00F6zkart</b><button class=\"pri\" data-a=\"add\">\uFF0B ".concat(t('add'), "</button><button data-a=\"hm\">").concat(t('decks'), "</button><button data-a=\"set\" aria-label=\"").concat(t('set'), "\">\u2699</button>"); }
+function hd() { $('#hd').innerHTML = "<b class=\"lg\">S\u00F6zkart</b><button class=\"pri\" data-a=\"add\">\uFF0B ".concat(t('add'), "</button><button data-a=\"hm\">").concat(t('decks'), "</button><button data-a=\"sy\" id=\"sy\" title=\"GitHub\">").concat(SYI[SY.st], "</button><button data-a=\"set\" aria-label=\"").concat(t('set'), "\">\u2699</button>"); }
 function left() { return V == 'study' ? studyV() : decksV(); }
 function go() { hd(); $('#app').innerHTML = "<div class=\"tabs\"><button class=\"".concat(TB == 'c' ? 'pri' : '', "\" data-a=\"tab\" data-i=\"c\">").concat(t('cardsT'), "</button><button class=\"").concat(TB == 'd' ? 'pri' : '', "\" data-a=\"tab\" data-i=\"d\">").concat(t('dictT'), " (").concat(S.cards.length, ")</button></div><div class=\"ws\" data-t=\"").concat(TB, "\"><section class=\"pl\" id=\"pl\">").concat(left(), "</section><section class=\"pr\">").concat(dictV(), "</section></div>"); }
 function ref(x) { var e = $('#bl'), s = e.scrollTop; e.innerHTML = lst(); e.scrollTop = s; if (!x)
@@ -514,7 +518,7 @@ A.dd = function (_, b) { var ids = sub(DS.id); if (!b.getAttribute('data-s')) {
 } S.decks = S.decks.filter(function (d) { return !ids.includes(d.id); }); S.cards = S.cards.filter(function (c) { return !ids.includes(c.k); }); save(); shut(); };
 var tmH = function () { return S.tags.map(function (g) { return "<span class=\"tg\">".concat(esc(g), "<button data-a=\"rt\" data-i=\"").concat(esc(g), "\">\u2715</button></span>"); }).join(''); };
 function settings() {
-    ovl("<h3>".concat(t('set'), "</h3><label>").concat(t('lang'), "<select id=\"sl\"><option value=\"tr\"").concat(S.lang == 'tr' ? ' selected' : '', ">T\u00FCrk\u00E7e</option><option value=\"en\"").concat(S.lang == 'en' ? ' selected' : '', ">English</option></select></label>\n<label>").concat(t('theme'), "<select id=\"sth\">").concat(['auto', 'light', 'dark', 'ocean'].map(function (x) { return "<option value=\"".concat(x, "\"").concat(S.theme == x ? ' selected' : '', ">").concat(t('th_' + x), "</option>"); }).join(''), "</select></label>\n<label>").concat(t('perDay'), "<input id=\"sp\" type=\"number\" min=\"0\" max=\"999\" value=\"").concat(S.per, "\"></label>\n<div class=\"lb\">").concat(t('tagMgr'), "</div><div id=\"tm\">").concat(tmH(), "</div><div class=\"nb\"><input id=\"nt2\" data-en=\"at2\" placeholder=\"").concat(t('newTag'), "\"><button data-a=\"at2\">\uFF0B</button></div>\n<div class=\"lb\">").concat(t('data'), "</div><div class=\"nb\"><button data-a=\"ex\">").concat(t('export'), "</button><label class=\"bt2\">").concat(t('import'), "<input type=\"file\" id=\"im\" accept=\".json,application/json\" hidden></label></div><div class=\"lb\">").concat(t('cloud'), "</div><div class=\"nb\"><button data-a=\"cl\">\u27F3 ").concat(t('clLoad'), "</button></div><input id=\"gt\" type=\"password\" autocomplete=\"off\" placeholder=\"").concat(t('clTok'), "\" value=\"").concat(esc(S.gt || ''), "\"><p class=\"mu\" id=\"cls\"></p><p class=\"mu\" id=\"ims\"></p>\n<div class=\"ac\"><button class=\"pri\" data-a=\"sh\">").concat(t('close'), "</button></div>"));
+    ovl("<h3>".concat(t('set'), "</h3><label>").concat(t('lang'), "<select id=\"sl\"><option value=\"tr\"").concat(S.lang == 'tr' ? ' selected' : '', ">T\u00FCrk\u00E7e</option><option value=\"en\"").concat(S.lang == 'en' ? ' selected' : '', ">English</option></select></label>\n<label>").concat(t('theme'), "<select id=\"sth\">").concat(['auto', 'light', 'dark', 'ocean'].map(function (x) { return "<option value=\"".concat(x, "\"").concat(S.theme == x ? ' selected' : '', ">").concat(t('th_' + x), "</option>"); }).join(''), "</select></label>\n<label>").concat(t('perDay'), "<input id=\"sp\" type=\"number\" min=\"0\" max=\"999\" value=\"").concat(S.per, "\"></label>\n<div class=\"lb\">").concat(t('tagMgr'), "</div><div id=\"tm\">").concat(tmH(), "</div><div class=\"nb\"><input id=\"nt2\" data-en=\"at2\" placeholder=\"").concat(t('newTag'), "\"><button data-a=\"at2\">\uFF0B</button></div>\n<div class=\"lb\">").concat(t('data'), "</div><div class=\"nb\"><button data-a=\"ex\">").concat(t('export'), "</button><label class=\"bt2\">").concat(t('import'), "<input type=\"file\" id=\"im\" accept=\".json,application/json\" hidden></label></div><div class=\"lb\">").concat(t('cloud'), "</div><input id=\"gt\" type=\"password\" autocomplete=\"off\" placeholder=\"").concat(t('clTok'), "\" value=\"").concat(esc(S.gt || ''), "\"><div class=\"fr\"><input id=\"gr\" placeholder=\"user/repo\" value=\"").concat(esc(S.gr || 'awmaqis/kindlecardsForAmisa'), "\"><input id=\"gp\" placeholder=\"data.json\" value=\"").concat(esc(S.gp || 'data.json'), "\"></div><div class=\"nb\"><button data-a=\"cl\">\u27F3 ").concat(t('clLoad'), "</button></div><p class=\"mu\" id=\"cls\">").concat(sMsg(), "</p><p class=\"mu\">").concat(t('sy_help'), "</p><p class=\"mu\" id=\"ims\"></p>\n<div class=\"ac\"><button class=\"pri\" data-a=\"sh\">").concat(t('close'), "</button></div>"));
 }
 A.at2 = function () { var i = $('#nt2'), g = i.value.trim(); if (g && !S.tags.some(function (x) { return norm(x) == norm(g); }))
     S.tags.push(g); i.value = ''; save(); $('#tm').innerHTML = tmH(); };
@@ -524,7 +528,7 @@ A.rt = function (g, b) { if (!b.getAttribute('data-s')) {
     return;
 } S.tags = S.tags.filter(function (x) { return x != g; }); S.cards.forEach(function (c) { c.g = c.g.filter(function (x) { return x != g; }); }); lastG = lastG.filter(function (x) { return x != g; }); save(); $('#tm').innerHTML = tmH(); };
 A.ex = function () {
-    var d = JSON.stringify(S);
+    var d = JSON.stringify(shared(1));
     var ok = false;
     try {
         var a = document.createElement('a');
@@ -552,37 +556,6 @@ A.ex = function () {
 };
 A.hm2 = function () { return shut(); };
 var MAP = { k: 'Karışık', edb: 'Edebiyat', biy: 'Biyoloji', fiz: 'Fizik', mat: 'Matematik', din: 'Din Kültürü', geo: 'Geometri', fel: 'Felsefe', mnt: 'Mantık', cog: 'Coğrafya', kim: 'Kimya', sos: 'Sosyoloji', psi: 'Psikoloji', tar: 'Tarih' };
-var GH = { repo: 'awmaqis/kindlecardsForAmisa', path: 'data.json', br: 'main' };
-A.cl = function () {
-    var m = $('#cls') || {};
-    m.textContent = '…';
-    var tk = (S.gt || '').trim();
-    var urls = tk ? [["https://api.github.com/repos/".concat(GH.repo, "/contents/").concat(GH.path, "?ref=").concat(GH.br), { Authorization: 'Bearer ' + tk, Accept: 'application/vnd.github.raw+json' }]] : [[GH.path + '?t=' + Date.now(), {}], ["https://raw.githubusercontent.com/".concat(GH.repo, "/").concat(GH.br, "/").concat(GH.path, "?t=").concat(Date.now()), {}]];
-    var next = function (k) {
-        if (k >= urls.length) {
-            m.textContent = t('clErr');
-            return;
-        }
-        var x = new XMLHttpRequest();
-        x.open('GET', urls[k][0], true);
-        for (var h in urls[k][1])
-            x.setRequestHeader(h, urls[k][1][h]);
-        x.onreadystatechange = function () { if (x.readyState != 4)
-            return; if (x.status == 200 || (x.status == 0 && x.responseText)) {
-            m.textContent = '';
-            impT(x.responseText);
-        }
-        else
-            next(k + 1); };
-        try {
-            x.send(null);
-        }
-        catch (e) {
-            next(k + 1);
-        }
-    };
-    next(0);
-};
 var say = function (q, x) { var e = $(q); if (e)
     e.textContent = x; };
 function imp(f) { if (!f)
@@ -761,9 +734,9 @@ document.addEventListener('change', function (e) {
     }
     else if (i == 'im')
         imp(e.target.files[0]);
-    else if (i == 'gt') {
-        S.gt = v.trim();
-        save();
+    else if (i == 'gt' || i == 'gr' || i == 'gp') {
+        S[i] = v.trim();
+        persist();
     }
 });
 MD.addEventListener('mousedown', function (e) { if (e.target === MD)
@@ -787,10 +760,254 @@ addEventListener('keydown', function (e) {
     else if (K(e) == 'Escape')
         A.hm();
 });
+var SY = { st: 'off', msg: '', dirty: false, ver: 0, busy: 0, last: 0, tm: 0, wait: 0 };
+var SYI = { off: '☁', ok: '☁✓', busy: '☁…', dirty: '☁●', err: '☁⚠' };
+function sMsg() { return ({ off: t('sy_off'), ok: t('sy_ok'), busy: t('sy_busy'), dirty: t('sy_dirty'), err: t('sy_err') + (SY.msg ? ': ' + SY.msg : '') })[SY.st]; }
+function sst(st, m) { SY.st = st; SY.msg = m || ''; var b = $('#sy'); if (b)
+    b.textContent = SYI[st]; var e = $('#cls'); if (e)
+    e.textContent = sMsg(); }
+function hs(o) { var x = JSON.stringify(o, function (k, v) { return k == 'mt' ? undefined : v; }); var h = 5381; for (var i = 0; i < x.length; i++)
+    h = ((h << 5) + h + x.charCodeAt(i)) | 0; return h; }
+function recs() { return S.cards.concat(S.decks, S.folders); }
+function stamp() {
+    var now = Date.now();
+    if (!S.del)
+        S.del = {};
+    if (!S.sg) {
+        S.sg = {};
+        recs().forEach(function (r) { S.sg[r.id] = hs(r); r.mt = r.mt || 0; });
+        S.topsg = hs(S.top);
+        S.tagsg = hs(S.tags);
+        S.topmt = S.topmt || 0;
+        S.tagsmt = S.tagsmt || 0;
+        return;
+    }
+    var seen = {};
+    recs().forEach(function (r) { seen[r.id] = 1; var h = hs(r); if (S.sg[r.id] !== h) {
+        S.sg[r.id] = h;
+        r.mt = now;
+    } });
+    for (var id in S.sg)
+        if (!seen[id]) {
+            delete S.sg[id];
+            S.del[id] = now;
+        }
+    var a = hs(S.top), b = hs(S.tags);
+    if (S.topsg !== a) {
+        S.topsg = a;
+        S.topmt = now;
+    }
+    if (S.tagsg !== b) {
+        S.tagsg = b;
+        S.tagsmt = now;
+    }
+    for (var id in S.del)
+        if (now - S.del[id] > 6e9)
+            delete S.del[id];
+}
+function rebase() { S.sg = {}; recs().forEach(function (r) { S.sg[r.id] = hs(r); }); S.topsg = hs(S.top); S.tagsg = hs(S.tags); }
+function shared(dev) { var o = { v: 2, savedAt: Date.now(), decks: S.decks, folders: S.folders, top: S.top, topmt: S.topmt || 0, cards: S.cards, tags: S.tags, tagsmt: S.tagsmt || 0, del: S.del || {} }; if (dev) {
+    o.lang = S.lang;
+    o.theme = S.theme;
+    o.per = S.per;
+} return o; }
+function mergeIn(r) {
+    var need = false, chg = false;
+    var ld = S.del || (S.del = {}), rd = r.del || {}, dl = {};
+    [ld, rd].forEach(function (o) { for (var k in o)
+        dl[k] = Math.max(dl[k] || 0, o[k]); });
+    var mg = function (la, ra) {
+        var m = {}, rm = {}, ls = {}, out = [];
+        la.forEach(function (x) { m[x.id] = x; ls[x.id] = 1; out.push(x); });
+        ra.forEach(function (x) { rm[x.id] = x; var y = m[x.id]; if (!y) {
+            out.push(x);
+            m[x.id] = x;
+            chg = true;
+        }
+        else {
+            var a = x.mt || 0, b = y.mt || 0;
+            if (a > b || (a == b && hs(x) !== hs(y))) {
+                out[out.indexOf(y)] = x;
+                m[x.id] = x;
+                chg = true;
+            }
+        } });
+        var keep = [];
+        out.forEach(function (x) {
+            var ry = rm[x.id];
+            if (dl[x.id] > (x.mt || 0)) {
+                if (ry && (ld[x.id] || 0) > (ry.mt || 0))
+                    need = true;
+                if (ls[x.id] && (ld[x.id] || 0) < dl[x.id])
+                    chg = true;
+                return;
+            }
+            if (!ry || (x.mt || 0) > (ry.mt || 0))
+                need = true;
+            keep.push(x);
+        });
+        return keep;
+    };
+    S.cards = mg(S.cards, r.cards || []);
+    S.decks = mg(S.decks, r.decks || []);
+    S.folders = mg(S.folders, r.folders || []);
+    S.del = dl;
+    var tm = (r.topmt || 0), lm = (S.topmt || 0);
+    if (tm > lm || (tm == lm && hs(r.top || []) !== hs(S.top))) {
+        S.top = (r.top || []).slice();
+        S.topmt = tm;
+        chg = true;
+    }
+    else if (lm > tm)
+        need = true;
+    var gm = (r.tagsmt || 0), hm = (S.tagsmt || 0);
+    if (gm > hm || (gm == hm && hs(r.tags || []) !== hs(S.tags))) {
+        S.tags = (r.tags || []).slice();
+        S.tagsmt = gm;
+        chg = true;
+    }
+    else if (hm > gm)
+        need = true;
+    S.cards = S.cards.filter(function (c) { return dk(c.k); });
+    S.cards.forEach(function (c) { return (c.g || []).forEach(function (g) { if (S.tags.indexOf(g) < 0)
+        S.tags.push(g); }); });
+    fix();
+    rebase();
+    return { need: need, chg: chg };
+}
+function cfg() { return { repo: (S.gr || 'awmaqis/kindlecardsForAmisa').trim(), path: (S.gp || 'data.json').trim().replace(/^\/+/, ''), br: 'main' }; }
+function b64(x) { return btoa(unescape(encodeURIComponent(x))); }
+function unb64(x) { return decodeURIComponent(escape(atob(x.replace(/\s/g, '')))); }
+function api(m, u, b, raw, cb) {
+    var x = new XMLHttpRequest(), tk = (S.gt || '').trim();
+    x.open(m, u, true);
+    if (tk)
+        x.setRequestHeader('Authorization', 'Bearer ' + tk);
+    x.setRequestHeader('Accept', raw ? 'application/vnd.github.raw+json' : 'application/vnd.github+json');
+    if (b)
+        x.setRequestHeader('Content-Type', 'application/json');
+    x.onreadystatechange = function () { if (x.readyState == 4)
+        cb(x.status, x.responseText); };
+    try {
+        x.send(b ? JSON.stringify(b) : null);
+    }
+    catch (e) {
+        cb(0, '');
+    }
+}
+function furl() { var c = cfg(); return "https://api.github.com/repos/".concat(c.repo, "/contents/").concat(encodeURI(c.path)); }
+function pull(cb) {
+    var c = cfg(), u = furl() + "?ref=".concat(c.br, "&_=").concat(Date.now());
+    api('GET', u, null, 0, function (st, tx) {
+        if (st == 0)
+            return cb('offline');
+        if (st == 404)
+            return cb(null, { sha: null, data: null });
+        var j = null;
+        try {
+            j = JSON.parse(tx);
+        }
+        catch (e) { }
+        if (st != 200 || !j)
+            return cb(st == 401 ? 'token?' : st == 403 ? 'rate limit / token' : 'HTTP ' + st);
+        var fin = function (txt) { var d = null; try {
+            d = JSON.parse(txt);
+        }
+        catch (e) {
+            return cb('bad JSON');
+        } cb(null, { sha: j.sha, data: d }); };
+        if (j.content && j.encoding == 'base64') {
+            var x = void 0;
+            try {
+                x = unb64(j.content);
+            }
+            catch (e) {
+                return cb('decode');
+            }
+            fin(x);
+        }
+        else
+            api('GET', u, null, 1, function (s2, t2) { return s2 == 200 ? fin(t2) : cb('HTTP ' + s2); });
+    });
+}
+function put(sha, cb) { var c = cfg(), body = { message: 'sync ' + new Date().toISOString(), content: b64(JSON.stringify(shared())), branch: c.br }; if (sha)
+    body.sha = sha; api('PUT', furl(), body, 0, function (st) { return cb(st); }); }
+function cycle(n) {
+    SY.busy = 1;
+    sst('busy');
+    var tk = (S.gt || '').trim();
+    pull(function (err, r) {
+        var stop = function (st, m) { SY.busy = 0; sst(st, m); if (st == 'err' && tk) {
+            clearTimeout(SY.tm);
+            SY.tm = setTimeout(function () { return kick(1); }, 60000);
+        }
+        else if (SY.dirty && tk)
+            sched(); };
+        if (err)
+            return stop('err', err);
+        var need = false;
+        if (r.data) {
+            if (!Array.isArray(r.data.cards) || !Array.isArray(r.data.decks))
+                return stop('err', 'format');
+            var m = mergeIn(r.data);
+            need = m.need;
+            if (m.chg) {
+                persist();
+                if (MD.hidden && V != 'study')
+                    go();
+            }
+        }
+        else {
+            if (!S.decks.length && !S.cards.length)
+                return stop('err', '404');
+            need = true;
+        }
+        if (!tk)
+            return stop(SY.dirty ? 'dirty' : 'off');
+        if (!need && !SY.dirty)
+            return stop('ok');
+        var ver = SY.ver;
+        put(r.sha, function (st) {
+            if (st == 200 || st == 201) {
+                if (SY.ver == ver)
+                    SY.dirty = false;
+                return stop(SY.dirty ? 'dirty' : 'ok');
+            }
+            if ((st == 409 || st == 422) && n < 3)
+                return cycle(n + 1);
+            stop('err', st == 401 || st == 403 ? 'token?' : 'HTTP ' + st);
+        });
+    });
+}
+function kick(f) { if (SY.busy)
+    return; if (!MD.hidden) {
+    SY.wait = 1;
+    return;
+} if (!f && Date.now() - SY.last < 15000)
+    return; SY.last = Date.now(); cycle(0); }
+function sched() { clearTimeout(SY.tm); if ((S.gt || '').trim())
+    SY.tm = setTimeout(function () { return kick(1); }, 8000);
+else
+    sst('dirty'); }
+A.cl = function () { SY.last = 0; kick(1); };
+A.sy = function () { if (!(S.gt || '').trim() && SY.st != 'ok' && SY.st != 'busy') {
+    settings();
+    return;
+} A.cl(); };
 fix();
-save();
+stamp();
+persist();
 theme();
 go();
-if (!S.cards.length && /^https?:/.test(location.protocol))
-    A.cl();
+if (/^https?:/.test(location.protocol)) {
+    sst('off');
+    kick(1);
+    document.addEventListener('visibilitychange', function () { if (document.hidden) {
+        if (SY.dirty)
+            kick(1);
+    }
+    else
+        kick(); });
+    window.addEventListener('online', function () { return kick(1); });
+}
 </script></body></html>
