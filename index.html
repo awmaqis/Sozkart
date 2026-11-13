@@ -103,6 +103,7 @@ header>*{margin:3px}
 .ck input{width:auto;display:inline-block;margin:0 8px 0 0;vertical-align:middle}
 .wd.wl{font:600 1.15rem/1.5 -apple-system,Helvetica,Arial,sans-serif;text-align:left;padding:18px 6px;white-space:pre-line}
 .lk{color:#c4321c;font-weight:700}
+.box .wd{padding:14px 4px}
 input,select,textarea{-webkit-box-sizing:border-box;box-sizing:border-box}
 .bt button{display:block;text-align:center}.bt small{display:block}
 .fr{display:block;margin:-3px}.fr>*{display:inline-block;vertical-align:top;width:31.5%;margin:3px .8%;-webkit-box-flex:0;-webkit-flex:none;flex:none}.fr>input{display:block;width:98.4%}
@@ -383,7 +384,7 @@ var dopt = function (fl, sel, vis) { var op = function (id, x) { return "<option
     return ''; return fl ? op(f.id, '📁 ' + esc(f.name)) + inn : "<optgroup label=\"\uD83D\uDCC1 ".concat(esc(f.name), "\">").concat(inn, "</optgroup>"); }).join(''); };
 function lst() {
     var r = flt(), n = SEL.size, all = r.length && r.every(function (c) { return SEL.has(c.id); });
-    return "<div class=\"bk\"><label><input type=\"checkbox\" id=\"sall\"".concat(all ? ' checked' : '', "> ").concat(r.length, " ").concat(t('cards'), "</label>").concat(n ? "<b>".concat(n, " ").concat(t('sel'), "</b><select id=\"bm\"><option value=\"\">").concat(t('moveTo'), "</option>").concat(dopt(), "</select><select id=\"btg\"><option value=\"\">\uFF0B ").concat(t('tags'), "</option>").concat(S.tags.map(function (g) { return "<option>".concat(esc(g), "</option>"); }).join(''), "</select><button class=\"dg\" data-a=\"bd\">").concat(t('delete'), "</button>") : '', "</div>") + r.slice(0, 200).map(function (c) { return "<div class=\"br\"><input type=\"checkbox\" data-c=\"".concat(c.id, "\"").concat(SEL.has(c.id) ? ' checked' : '', "><div class=\"bm2\" data-a=\"ec\" data-i=\"").concat(c.id, "\"><b>").concat(esc(c.w), "</b> <span class=\"mu\">").concat(esc(Object.values(c.t).filter(Boolean).join(' · ')), "</span><em>").concat(esc(path(c.k)), "</em>").concat(chips(c.g), "</div><button class=\"ic dg\" data-a=\"rd\" data-i=\"").concat(c.id, "\" title=\"").concat(t('delete'), "\">\u2715</button></div>"); }).join('') + (r.length > 200 ? "<p class=\"mu\">\u2026 ".concat(t('narrow'), "</p>") : '');
+    return "<div class=\"bk\"><label><input type=\"checkbox\" id=\"sall\"".concat(all ? ' checked' : '', "> ").concat(r.length, " ").concat(t('cards'), "</label>").concat(n ? "<b>".concat(n, " ").concat(t('sel'), "</b><select id=\"bm\"><option value=\"\">").concat(t('moveTo'), "</option>").concat(dopt(), "</select><select id=\"btg\"><option value=\"\">\uFF0B ").concat(t('tags'), "</option>").concat(S.tags.map(function (g) { return "<option>".concat(esc(g), "</option>"); }).join(''), "</select><button class=\"dg\" data-a=\"bd\">").concat(t('delete'), "</button>") : '', "</div>") + r.slice(0, 200).map(function (c) { return "<div class=\"br\"><input type=\"checkbox\" data-c=\"".concat(c.id, "\"").concat(SEL.has(c.id) ? ' checked' : '', "><div class=\"bm2\" data-a=\"vc\" data-i=\"").concat(c.id, "\"><b>").concat(esc(c.w), "</b> <span class=\"mu\">").concat(esc(Object.values(c.t).filter(Boolean).join(' · ')), "</span><em>").concat(esc(path(c.k)), "</em>").concat(chips(c.g), "</div><button class=\"ic dg\" data-a=\"rd\" data-i=\"").concat(c.id, "\" title=\"").concat(t('delete'), "\">\u2715</button></div>"); }).join('') + (r.length > 200 ? "<p class=\"mu\">\u2026 ".concat(t('narrow'), "</p>") : '');
 }
 function dictV() { return "<div class=\"pn\"><h3 style=\"margin:0 0 8px\">".concat(t('dictT'), "</h3><div class=\"nb\"><input id=\"qw\" autocomplete=\"off\" placeholder=\"").concat(t('wordPh'), "\"><button class=\"pri\" data-a=\"qa\">\uFF0B ").concat(t('addB'), "</button></div><div id=\"qs\" class=\"stt\"></div><div class=\"fr\"><input id=\"bq\" placeholder=\"").concat(t('search'), "\" value=\"").concat(esc(BF.q), "\"><select id=\"bd\"><option value=\"\">").concat(t('all'), "</option>").concat(dopt(1, 0, 1).replace("value=\"".concat(BF.d, "\""), "value=\"".concat(BF.d, "\" selected")), "</select><select id=\"bg\"><option value=\"\">").concat(t('tags'), "</option>").concat(S.tags.map(function (g) { return "<option".concat(BF.g == g ? ' selected' : '', ">").concat(esc(g), "</option>"); }).join(''), "</select><select id=\"bs\">").concat(['az', 'new', 'deck'].map(function (x) { return "<option value=\"".concat(x, "\"").concat(BF.s == x ? ' selected' : '', ">").concat(t('s_' + x), "</option>"); }).join(''), "</select></div><div id=\"bl\">").concat(lst(), "</div></div>"); }
 function qchk() { var e = $('#qs'), i = $('#qw'), x = dup(i.value); if (!i.value.trim()) {
@@ -433,8 +434,19 @@ A.tab = function (i) { TB = i; go(); };
 A.set = function () { return settings(); };
 A.add = function () { return cardForm(Q ? Q.deck : cur); };
 A.ad = function (id) { return cardForm(id); };
-A.sh = function () { return shut(); };
+A.sh = function () { var f = F; F = null; shut(); if (f && f.fv && f.id && S.cards.some(function (c) { return c.id == f.id; }))
+    A.vc(f.id); };
 A.ec = function (id) { return cardForm(null, S.cards.find(function (c) { return c.id == id; })); };
+A.ec2 = function (id) { A.ec(id); if (F)
+    F.fv = 1; };
+A.vc = function (id) {
+    F = null;
+    var c = S.cards.find(function (x) { return x.id == id; });
+    if (!c)
+        return;
+    var d = dk(c.k), fs = (d ? d.f : []).filter(function (f) { return c.t[f.id]; });
+    ovl("<div class=\"sh\"><span class=\"mu\">".concat(esc(path(c.k)), "</span><button class=\"ic\" data-a=\"ec2\" data-i=\"").concat(c.id, "\" title=\"").concat(t('edit'), "\">\u270E ").concat(t('edit'), "</button></div><div class=\"wd").concat((c.w.length > 70 || c.w.indexOf('\n') > -1) ? ' wl' : '', "\">").concat(esc(c.w), "</div><hr><div class=\"bk2\">").concat(fs.map(function (f) { return "<div class=\"tl\"><b>".concat(esc(f.n), "</b><div class=\"tx\">").concat(esc(c.t[f.id]), "</div></div>"); }).join('')).concat(c.d ? "<div class=\"tl\"><b>".concat(esc(dlab(d)), "</b><div class=\"tx\">").concat(esc(c.d), "</div></div>") : '', "</div>").concat(c.g.length ? "<div>".concat(chips(c.g), "</div>") : '', "<div class=\"ac\"><button class=\"pri\" data-a=\"sh\">").concat(t('close'), "</button></div>"));
+};
 A.tg = function (id) { var f = fld(id); if (f) {
     f.o = f.o === false;
     save();
@@ -580,7 +592,11 @@ A.sv = function () {
         Object.assign(S.cards.find(function (c) { return c.id == F.id; }), { w: w, k: F.deck, t: tr, d: F.d.trim(), g: F.g });
         save();
         toast(t('saved'));
+        var fv = F.fv, fid = F.id;
+        F = null;
         shut();
+        if (fv)
+            A.vc(fid);
         return;
     }
     S.cards.push({ id: uid(), k: F.deck, w: w, t: tr, d: F.d.trim(), g: __spreadArray([], F.g, true), st: 'new', ivl: 0, ef: 2.5, due: 0, at: Date.now() });
