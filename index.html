@@ -178,7 +178,7 @@ function CL(e, c, on) { var r = ' ' + (e.className || '') + ' '; while (r.indexO
 function K(e) { if (e.key)
     return e.key; var c = e.keyCode || e.which; return c == 13 ? 'Enter' : c == 27 ? 'Escape' : c == 32 ? ' ' : (c >= 49 && c <= 52) ? String.fromCharCode(c) : (c >= 97 && c <= 100) ? String(c - 96) : ''; }
 var $ = function (s) { return document.querySelector(s); }, uid = function () { return Math.random().toString(36).slice(2, 9); }, esc = function (s) { return String(s !== null && s !== void 0 ? s : '').replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]); }); };
-var D = { add: 'Kart ekle|Add card', addB: 'Ekle|Add', edit: 'Kartı düzenle|Edit card', browse: 'Gözat|Browse', decks: 'Desteler|Decks', set: 'Ayarlar|Settings', new: 'Yeni|New', due: 'Tekrar|Due', newDeck: 'Yeni deste|New deck', subdeck: 'Alt deste|Subdeck', deckName: 'Deste adı|Deck name', create: 'Oluştur|Create', cancel: 'İptal|Cancel', close: 'Kapat|Close', save: 'Kaydet|Save', delete: 'Sil|Delete', sure: 'Emin misin?|Sure?', deleted: 'Silindi|Deleted', saved: 'Kaydedildi|Saved', added: 'eklendi|added', deck: 'Deste|Deck', word: 'Kelime|Word', wordPh: 'Eklenecek kelime…|Word to add…', avail: 'Bu kelime sözlükte yok, eklenebilir|Not in the dictionary yet, you can add it', exists: 'Bu kelime zaten sözlükte var|This word is already in the dictionary', desc: 'Açıklama|Description', descLbl: 'Açıklama başlığı|Description label', tags: 'Etiketler|Tags', newTag: 'Yeni etiket…|New tag…', noTags: 'Henüz etiket yok, aşağıdan ekle|No tags yet, add one below', boxes: 'Çeviri kutuları|Translation boxes', boxPh: 'Yeni çeviri kutusu adı (örn. Rusça)|New box name (e.g. Russian)', addBox: 'Kutu ekle|Add box', boxHint: 'Kutular bu destedeki tüm kartlarda görünür.|Boxes appear on every card in this deck.', boxExists: 'Bu adda bir kutu var|A box with this name exists', deckExists: 'Bu adda bir deste var|A deck with this name exists', deckSet: 'Deste ayarları|Deck settings', trans: 'Çeviri|Translation', showAns: 'Cevabı göster|Show answer', again: 'Tekrar|Again', sy_off: 'Token yok: değişiklikler yalnızca bu cihazda kalır|No token: changes stay on this device', sy_ok: 'Eşitlendi ✓|Synced ✓', sy_busy: 'Eşitleniyor…|Syncing…', sy_dirty: 'Gönderilmemiş değişiklikler var|Unsynced changes', sy_err: 'Hata|Error', sy_relay: 'Relay URL (isteğe bağlı)|Relay URL (optional)', sy_diag: 'Bağlantıyı test et|Test connection', sy_force: 'GitHub dosyasını bu cihazın verisiyle değiştir|Replace the GitHub file with this device’s data', sy_help: 'Token: GitHub → Settings → Developer settings → Fine-grained tokens; yalnızca bu repo, Contents: Read and write.|Token: GitHub → Settings → Developer settings → Fine-grained tokens; this repo only, Contents: Read and write.', fo_folder: 'Klasör|Folder', fo_top: 'Klasör yok (üst düzey)|No folder (top level)', fo_new: 'Yeni klasör|New folder', fo_name: 'Klasör adı|Folder name', fo_reorder: 'Sırala|Reorder', fo_done: 'Bitti|Done', fo_set: 'Klasör ayarları|Folder settings', fo_study: 'Hepsini çalış|Study all', fo_hint: 'Klasör silinirse desteler silinmez, üst düzeye çıkar.|Deleting a folder keeps its decks: they move to the top level.', fo_exists: 'Bu adda klasör var|A folder with this name exists', inDict: 'Sözlükte göster|Show contents in dictionary', q: 'Soru / terim|Question / term', qPh: 'Soru, terim veya kavram|Question, term or concept', exam: 'Sınav tarihi (isteğe bağlı)|Exam date (optional)', examH: 'Tekrarlar sınavdan önce görülecek şekilde planlanır.|Reviews are scheduled so every card is seen before this date.', perRev: 'Günlük en fazla tekrar|Max reviews per day', cram: 'Tümünü çalış (program değişmez)|Cram all (schedule unchanged)', ahead: 'İleriyi çalış (3 gün)|Study ahead (3 days)', cramT: 'tekrar turu|cram', undo: 'Geri al|Undo', acc: 'doğru|correct', streak: 'günlük seri|day streak', fcast: 'Yaklaşan|Coming up', tmr: 'yarın|tomorrow', leech: 'Zor kart! Başka şekilde ezberlemeyi dene.|Tough card! Try rewriting it or adding a hint.', waitN: 'Sonraki kart|Next card in', waitS: 'Şimdi göster|Show now', hard: 'Zor|Hard', good: 'İyi|Good', easy: 'Kolay|Easy', done: 'Bugünlük bu kadar!|All done for now!', doneH: 'Bu destede şimdilik çalışılacak kart kalmadı.|No more cards to study in this deck right now.', back: 'Destelere dön|Back to decks', search: 'Kelime, çeviri veya açıklama ara…|Search word, translation or description…', all: 'Tüm desteler|All decks', cards: 'kart|cards', lang: 'Dil|Language', theme: 'Tema|Theme', th_auto: 'Otomatik|Auto', th_light: 'Açık|Light', th_dark: 'Koyu|Dark', th_ocean: 'Okyanus|Ocean', perDay: 'Günlük yeni kart|New cards per day', tagMgr: 'Etiketleri yönet|Manage tags', data: 'Yedek ve içe aktarma|Backup and import', export: 'Dışa aktar (JSON)|Export (JSON)', import: 'İçe aktar (JSON)|Import (JSON)', impOk: 'İçe aktarıldı: {a} yeni, {s} zaten vardı|Imported: {a} new, {s} already existed', impBad: 'Dosya okunamadı veya biçim tanınmadı|Could not read this file or format not recognised', noDl: 'Dışa aktarma burada kullanılamıyor|Export is not available here', saveErr: 'Tarayıcı depolaması dolu veya kapalı|Browser storage is full or disabled', mn: ' dk| min', dy: ' g| d', mo: ' ay| mo', emptyT: 'İlk destenle başla|Start with your first deck', emptyH: 'Deste oluştur, sonra kart ekle. Amisa verin varsa Ayarlar › İçe aktar.|Create a deck, then add cards. Have Amisa data? Settings › Import.', cnt: '{n} kart silinecek|{n} cards will be deleted', cardsT: 'Kartlar|Cards', dictT: 'Sözlük|Dictionary', sel: 'seçili|selected', moveTo: 'Desteye taşı…|Move to deck…', narrow: 'Aramayı daralt|Narrow the search', s_az: 'A–Z|A–Z', s_new: 'En yeni|Newest', s_deck: 'Deste|By deck', cloud: 'GitHub eşitleme|GitHub sync', clLoad: 'Şimdi eşitle|Sync now', clTok: 'GitHub token (değişiklikleri kaydetmek için)|GitHub token (needed to save changes)', clErr: 'Yüklenemedi|Could not load' };
+var D = { add: 'Kart ekle|Add card', addB: 'Ekle|Add', edit: 'Kartı düzenle|Edit card', browse: 'Gözat|Browse', decks: 'Desteler|Decks', set: 'Ayarlar|Settings', new: 'Yeni|New', due: 'Tekrar|Due', newDeck: 'Yeni deste|New deck', subdeck: 'Alt deste|Subdeck', deckName: 'Deste adı|Deck name', create: 'Oluştur|Create', cancel: 'İptal|Cancel', close: 'Kapat|Close', save: 'Kaydet|Save', delete: 'Sil|Delete', sure: 'Emin misin?|Sure?', deleted: 'Silindi|Deleted', saved: 'Kaydedildi|Saved', added: 'eklendi|added', deck: 'Deste|Deck', word: 'Kelime|Word', wordPh: 'Eklenecek kelime…|Word to add…', avail: 'Bu kelime sözlükte yok, eklenebilir|Not in the dictionary yet, you can add it', exists: 'Bu kelime zaten sözlükte var|This word is already in the dictionary', desc: 'Açıklama|Description', descLbl: 'Açıklama başlığı|Description label', tags: 'Etiketler|Tags', newTag: 'Yeni etiket…|New tag…', noTags: 'Henüz etiket yok, aşağıdan ekle|No tags yet, add one below', boxes: 'Çeviri kutuları|Translation boxes', boxPh: 'Yeni çeviri kutusu adı (örn. Rusça)|New box name (e.g. Russian)', addBox: 'Kutu ekle|Add box', boxHint: 'Kutular bu destedeki tüm kartlarda görünür.|Boxes appear on every card in this deck.', boxExists: 'Bu adda bir kutu var|A box with this name exists', deckExists: 'Bu adda bir deste var|A deck with this name exists', deckSet: 'Deste ayarları|Deck settings', trans: 'Çeviri|Translation', showAns: 'Cevabı göster|Show answer', again: 'Tekrar|Again', sy_off: 'Token yok: değişiklikler yalnızca bu cihazda kalır|No token: changes stay on this device', sy_ok: 'Eşitlendi ✓|Synced ✓', sy_busy: 'Eşitleniyor…|Syncing…', sy_dirty: 'Gönderilmemiş değişiklikler var|Unsynced changes', sy_err: 'Hata|Error', sy_relay: 'Relay URL (isteğe bağlı)|Relay URL (optional)', sy_diag: 'Bağlantıyı test et|Test connection', sy_force: 'GitHub dosyasını bu cihazın verisiyle değiştir|Replace the GitHub file with this device’s data', sy_help: 'Token: GitHub → Settings → Developer settings → Fine-grained tokens; yalnızca bu repo, Contents: Read and write.|Token: GitHub → Settings → Developer settings → Fine-grained tokens; this repo only, Contents: Read and write.', fo_folder: 'Klasör|Folder', fo_top: 'Klasör yok (üst düzey)|No folder (top level)', fo_new: 'Yeni klasör|New folder', fo_name: 'Klasör adı|Folder name', fo_reorder: 'Sırala|Reorder', fo_done: 'Bitti|Done', fo_set: 'Klasör ayarları|Folder settings', fo_study: 'Hepsini çalış|Study all', fo_hint: 'Klasör silinirse desteler silinmez, üst düzeye çıkar.|Deleting a folder keeps its decks: they move to the top level.', fo_exists: 'Bu adda klasör var|A folder with this name exists', inDict: 'Sözlükte göster|Show contents in dictionary', q: 'Soru / terim|Question / term', qPh: 'Soru, terim veya kavram|Question, term or concept', exam: 'Sınav tarihi (isteğe bağlı)|Exam date (optional)', examH: 'Tekrarlar sınavdan önce görülecek şekilde planlanır.|Reviews are scheduled so every card is seen before this date.', perRev: 'Günlük en fazla tekrar|Max reviews per day', cram: 'Tümünü çalış (program değişmez)|Cram all (schedule unchanged)', ahead: 'İleriyi çalış (3 gün)|Study ahead (3 days)', cramT: 'tekrar turu|cram', undo: 'Geri al|Undo', acc: 'doğru|correct', streak: 'günlük seri|day streak', fcast: 'Yaklaşan|Coming up', tmr: 'yarın|tomorrow', leech: 'Zor kart! Başka şekilde ezberlemeyi dene.|Tough card! Try rewriting it or adding a hint.', waitN: 'Sonraki kart|Next card in', waitS: 'Şimdi göster|Show now', hard: 'Zor|Hard', good: 'İyi|Good', easy: 'Kolay|Easy', done: 'Bugünlük bu kadar!|All done for now!', doneH: 'Bu destede şimdilik çalışılacak kart kalmadı.|No more cards to study in this deck right now.', back: 'Destelere dön|Back to decks', search: 'Kelime, çeviri veya açıklama ara…|Search word, translation or description…', all: 'Tüm desteler|All decks', cards: 'kart|cards', lang: 'Dil|Language', theme: 'Tema|Theme', th_auto: 'Otomatik|Auto', th_light: 'Açık|Light', th_dark: 'Koyu|Dark', th_ocean: 'Okyanus|Ocean', perDay: 'Günlük yeni kart|New cards per day', tagMgr: 'Etiketleri yönet|Manage tags', data: 'Yedek ve içe aktarma|Backup and import', export: 'Dışa aktar (JSON)|Export (JSON)', import: 'İçe aktar (JSON)|Import (JSON)', impOk: 'İçe aktarıldı: {a} yeni, {s} zaten vardı|Imported: {a} new, {s} already existed', impBad: 'Dosya okunamadı veya biçim tanınmadı|Could not read this file or format not recognised', noDl: 'Dışa aktarma burada kullanılamıyor|Export is not available here', saveErr: 'Tarayıcı depolaması dolu veya kapalı|Browser storage is full or disabled', mn: ' dk| min', dy: ' g| d', mo: ' ay| mo', emptyT: 'İlk destenle başla|Start with your first deck', emptyH: 'Deste oluştur, sonra kart ekle. Amisa verin varsa Ayarlar › İçe aktar.|Create a deck, then add cards. Have Amisa data? Settings › Import.', cnt: '{n} kart silinecek|{n} cards will be deleted', cardsT: 'Kartlar|Cards', dictT: 'Sözlük|Dictionary', sel: 'seçili|selected', moveTo: 'Desteye ekle…|Add to deck…', narrow: 'Aramayı daralt|Narrow the search', s_az: 'A–Z|A–Z', s_new: 'En yeni|Newest', s_deck: 'Deste|By deck', cloud: 'GitHub eşitleme|GitHub sync', clLoad: 'Şimdi eşitle|Sync now', clTok: 'GitHub token (değişiklikleri kaydetmek için)|GitHub token (needed to save changes)', clErr: 'Yüklenemedi|Could not load' };
 var S = (function () { try {
     var j = JSON.parse(localStorage.getItem('sozkart'));
     if (j && j.decks)
@@ -192,9 +192,20 @@ catch (e) {
     toast(t('saveErr'), 1);
 } }, save = function () { fix(); stamp(); SY.dirty = true; SY.ver++; persist(); sched(); };
 var V = 'decks', Q = null, F = null, DS = null, cur = null, lastG = [], BF = { q: '', d: '', g: '', s: 'az' }, TB = 'c', SEL = new MiniSet(), tt;
-var MD = $('#md'), norm = function (s) { return String(s).trim().replace(/\s+/g, ' ').toLocaleLowerCase('tr'); }, inDict = function (c) { var d = dk(c.k); return !!d && !d.nodict; }, dup = function (w, k) { var n = norm(w), d = k ? dk(k) : null; return n ? S.cards.find(function (c) { return norm(c.w) === n && (d && d.nodict ? c.k === k : inDict(c)); }) : null; }, dk = function (id) { return S.decks.find(function (d) { return d.id === id; }); }, fld = function (id) { return S.folders.find(function (f) { return f.id === id; }); }, fof = function (id) { return S.folders.find(function (f) { return f.ds.indexOf(id) > -1; }); }, sub = function (id) { var f = fld(id); return f ? f.ds.slice() : [id]; }, path = function (id) { var f = fld(id); if (f)
+var MD = $('#md'), norm = function (s) { return String(s).trim().replace(/\s+/g, ' ').toLocaleLowerCase('tr'); }, inDict = function (c) { var d = dk(c.k); return !!d && !d.nodict; }, dup = function (w, k, ex) { var n = norm(w), d = k ? dk(k) : null; if (!n) return null; if (d && d.nodict) return S.cards.find(function (c) { return norm(c.w) === n && c.k === k; }); var x = S.words.find(function (v) { return norm(v.w) === n && v.id !== ex; }); return x ? { id: 'w:' + x.id, w: x.w, k: '', t: x.t || {} } : null; }, dk = function (id) { return S.decks.find(function (d) { return d.id === id; }); }, fld = function (id) { return S.folders.find(function (f) { return f.id === id; }); }, fof = function (id) { return S.folders.find(function (f) { return f.ds.indexOf(id) > -1; }); }, sub = function (id) { var f = fld(id); return f ? f.ds.slice() : [id]; }, path = function (id) { var f = fld(id); if (f)
     return f.name; var d = dk(id), o = d && fof(id); return d ? (o ? o.name + ' › ' : '') + d.name : ''; };
+var wfind=function(id){return S.words.find(function(w){return w.id===id})},
+wf=function(){var o=[];S.words.forEach(function(w){for(var k in w.t)if(o.indexOf(k)<0)o.push(k)});S.decks.forEach(function(d){if(!d.nodict)d.f.forEach(function(f){if(o.indexOf(f.n)<0)o.push(f.n)})});return o},
+wapply=function(c,w){var d=dk(c.k);c.wid=w.id;c.w=w.w;c.d=w.d||'';c.g=(w.g||[]).slice();c.t={};var _n=function(n){if(!w.t[n])return;var f=d.f.find(function(f){return f.n==n});if(!f){f={id:uid(),n:n};d.f.push(f)}c.t[f.id]=w.t[n]};for(var n in w.t)_n(n)},
+wadd=function(w,k){if(S.cards.some(function(c){return c.k===k&&c.wid===w.id}))return 0;var c={id:uid(),k:k,st:'new',ivl:0,ef:2.5,due:0,at:Date.now()};wapply(c,w);S.cards.push(c);return 1},
+wsave=function(w){S.cards.forEach(function(c){if(c.wid===w.id&&dk(c.k))wapply(c,w)})},
+cw=function(c){var d=dk(c.k);if(!c||!d||d.nodict){if(c)delete c.wid;return}var w=(c.wid&&wfind(c.wid))||S.words.find(function(v){return norm(v.w)===norm(c.w)});if(!w){w={id:uid(),t:{},at:Date.now()};S.words.push(w)}w.w=c.w;w.d=c.d;w.g=(c.g||[]).slice();d.f.forEach(function(f){if(c.t[f.id])w.t[f.n]=c.t[f.id];else delete w.t[f.n]});wsave(w)},
+wdel=function(ids){var s={},cs={};ids.forEach(function(i){s[i]=1;SEL['delete'](i)});S.cards=S.cards.filter(function(c){return !s[c.wid]});S.words=S.words.filter(function(w){return !s[w.id]});S.cards.forEach(function(c){cs[c.id]=1});if(Q)Q.q=Q.q.filter(function(x){return cs[x]})},
+FW=function(){var c=F&&F.id&&S.cards.find(function(c){return c.id==F.id});return c&&c.wid},
+pn=function(){return (S.prof||'default').trim().replace(/[\/\\.\s]+/g,'_')};
+function mig(){if(!S.words)S.words=[];var by={};S.words.forEach(function(w){by['$'+norm(w.w)]=w});S.cards.forEach(function(c){var d=dk(c.k);if(c.wid||!d||d.nodict)return;var k='$'+norm(c.w),w=by[k];if(!w){w=by[k]={id:uid(),w:c.w,t:{},d:c.d||'',g:(c.g||[]).slice(),at:c.at||Date.now()};S.words.push(w)}for(var id in c.t){var f=d.f.find(function(f){return f.id==id});if(f&&c.t[id]&&!w.t[f.n])w.t[f.n]=c.t[id]}c.wid=w.id})}
 function fix() {
+    mig();
     if (!S.folders)
         S.folders = [];
     if (!S.top)
@@ -303,7 +314,7 @@ var fmt = function (ms) { return ms < 36e5 ? Math.max(1, Math.round(ms / 6e4)) +
 var chips = function (a) { return a.map(function (g) { return "<span class=\"tg\">".concat(esc(g), "</span>"); }).join(''); };
 function hd() { $('#hd').innerHTML = "<b class=\"lg\">S\u00F6zkart</b><button class=\"pri\" data-a=\"add\">\uFF0B ".concat(t('add'), "</button><button data-a=\"hm\">").concat(t('decks'), "</button><button data-a=\"sy\" id=\"sy\" title=\"GitHub\">").concat(SYI[SY.st], "</button><button data-a=\"set\" aria-label=\"").concat(t('set'), "\">\u2699</button>"); }
 function left() { return V == 'study' ? studyV() : decksV(); }
-function go() { hd(); $('#app').innerHTML = "<div class=\"tabs\"><button class=\"".concat(TB == 'c' ? 'pri' : '', "\" data-a=\"tab\" data-i=\"c\">").concat(t('cardsT'), "</button><button class=\"").concat(TB == 'd' ? 'pri' : '', "\" data-a=\"tab\" data-i=\"d\">").concat(t('dictT'), " (").concat(S.cards.filter(inDict).length, ")</button></div><div class=\"ws\" data-t=\"").concat(TB, "\"><section class=\"pl\" id=\"pl\">").concat(left(), "</section><section class=\"pr\">").concat(dictV(), "</section></div>"); }
+function go() { hd(); $('#app').innerHTML = "<div class=\"tabs\"><button class=\"".concat(TB == 'c' ? 'pri' : '', "\" data-a=\"tab\" data-i=\"c\">").concat(t('cardsT'), "</button><button class=\"").concat(TB == 'd' ? 'pri' : '', "\" data-a=\"tab\" data-i=\"d\">").concat(t('dictT'), " (").concat(S.words.length, ")</button></div><div class=\"ws\" data-t=\"").concat(TB, "\"><section class=\"pl\" id=\"pl\">").concat(left(), "</section><section class=\"pr\">").concat(dictV(), "</section></div>"); }
 function ref(x) { var e = $('#bl'), s = e.scrollTop; e.innerHTML = lst(); e.scrollTop = s; if (!x)
     $('#pl').innerHTML = left(); }
 var RO = false;
@@ -371,9 +382,10 @@ function stg(c) { return "<div class=\"lb\">".concat(t('tags'), "</div>") + (S.t
 var FR = 'çğöşüâîûêôéèëáàäíìïóòúùñýıйё', TOO = 'cgosuaiueoeeeaaaiiioouunyiие', fold = function (s) { s = norm(s); if (s.normalize)
     s = s.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); return s.replace(/[çğöşüâîûêôéèëáàäíìïóòúùñýıйё]/g, function (m) { return TOO.charAt(FR.indexOf(m)); }); };
 function flt() {
-    var q = fold(BF.q), ids = BF.d ? new MiniSet(sub(BF.d)) : null, r = S.cards.filter(function (c) { return inDict(c) && (!ids || ids.has(c.k)) && (!BF.g || c.g.includes(BF.g)) && (!q || fold(c.w + ' ' + Object.values(c.t).join(' ') + ' ' + c.d).includes(q)); });
-    var sc = function (c) { if (!q)
-        return 0; var w = fold(c.w); return w == q ? 0 : w.startsWith(q) ? 1 : w.includes(q) ? 2 : fold(Object.values(c.t).join(' ')).includes(q) ? 3 : 4; }, o = BF.s == 'new' ? function (a, b) { return b.at - a.at; } : BF.s == 'deck' ? function (a, b) { return path(a.k).localeCompare(path(b.k), 'tr') || a.w.localeCompare(b.w, 'tr'); } : function (a, b) { return a.w.localeCompare(b.w, 'tr'); };
+    var q = fold(BF.q), ids = null;
+    if (BF.d) { ids = {}; var ks = new MiniSet(sub(BF.d)); S.cards.forEach(function (c) { if (c.wid && ks.has(c.k)) ids[c.wid] = 1; }); }
+    var r = S.words.filter(function (c) { return (!ids || ids[c.id]) && (!BF.g || (c.g || []).includes(BF.g)) && (!q || fold(c.w + ' ' + Object.values(c.t).join(' ') + ' ' + (c.d || '')).includes(q)); });
+    var sc = function (c) { if (!q) return 0; var w = fold(c.w); return w == q ? 0 : w.startsWith(q) ? 1 : w.includes(q) ? 2 : 3; }, o = BF.s == 'new' ? function (a, b) { return (b.at || 0) - (a.at || 0); } : function (a, b) { return a.w.localeCompare(b.w, 'tr'); };
     return r.sort(function (a, b) { return sc(a) - sc(b) || o(a, b); });
 }
 var dopt = function (fl, sel, vis) { var op = function (id, x) { return "<option value=\"".concat(id, "\"").concat(id == sel ? ' selected' : '', ">").concat(x, "</option>"); }; return S.top.map(function (x) { var k = x.slice(2); if (x.charAt(0) == 'd') {
@@ -382,10 +394,8 @@ var dopt = function (fl, sel, vis) { var op = function (id, x) { return "<option
 } var f = fld(k); if (!f)
     return ''; var inn = f.ds.map(function (id) { var d = dk(id); return d && !(vis && d.nodict) ? op(id, '\u00a0\u00a0' + esc(d.name)) : ''; }).join(''); if (vis && !inn)
     return ''; return fl ? op(f.id, '📁 ' + esc(f.name)) + inn : "<optgroup label=\"\uD83D\uDCC1 ".concat(esc(f.name), "\">").concat(inn, "</optgroup>"); }).join(''); };
-function lst() {
-    var r = flt(), n = SEL.size, all = r.length && r.every(function (c) { return SEL.has(c.id); });
-    return "<div class=\"bk\"><label><input type=\"checkbox\" id=\"sall\"".concat(all ? ' checked' : '', "> ").concat(r.length, " ").concat(t('cards'), "</label>").concat(n ? "<b>".concat(n, " ").concat(t('sel'), "</b><select id=\"bm\"><option value=\"\">").concat(t('moveTo'), "</option>").concat(dopt(), "</select><select id=\"btg\"><option value=\"\">\uFF0B ").concat(t('tags'), "</option>").concat(S.tags.map(function (g) { return "<option>".concat(esc(g), "</option>"); }).join(''), "</select><button class=\"dg\" data-a=\"bd\">").concat(t('delete'), "</button>") : '', "</div>") + r.slice(0, 200).map(function (c) { return "<div class=\"br\"><input type=\"checkbox\" data-c=\"".concat(c.id, "\"").concat(SEL.has(c.id) ? ' checked' : '', "><div class=\"bm2\" data-a=\"vc\" data-i=\"").concat(c.id, "\"><b>").concat(esc(c.w), "</b> <span class=\"mu\">").concat(esc(Object.values(c.t).filter(Boolean).join(' · ')), "</span><em>").concat(esc(path(c.k)), "</em>").concat(chips(c.g), "</div><button class=\"ic dg\" data-a=\"rd\" data-i=\"").concat(c.id, "\" title=\"").concat(t('delete'), "\">\u2715</button></div>"); }).join('') + (r.length > 200 ? "<p class=\"mu\">\u2026 ".concat(t('narrow'), "</p>") : '');
-}
+function lst(){var r=flt(),n=SEL.size,all=r.length&&r.every(function(c){return SEL.has(c.id)}),dm={};S.cards.forEach(function(c){if(c.wid&&dk(c.k))(dm[c.wid]||(dm[c.wid]=[])).push(path(c.k))});
+return '<div class="bk"><label><input type="checkbox" id="sall"'+(all?' checked':'')+'> '+r.length+' '+t('cards')+'</label>'+(n?'<b>'+n+' '+t('sel')+'</b><select id="bm"><option value="">'+t('moveTo')+'</option>'+dopt()+'</select><select id="btg"><option value="">\uFF0B '+t('tags')+'</option>'+S.tags.map(function(g){return '<option>'+esc(g)+'</option>'}).join('')+'</select><button class="dg" data-a="bd">'+t('delete')+'</button>':'')+'</div>'+r.slice(0,200).map(function(c){return '<div class="br"><input type="checkbox" data-c="'+c.id+'"'+(SEL.has(c.id)?' checked':'')+'><div class="bm2" data-a="vw" data-i="'+c.id+'"><b>'+esc(c.w)+'</b> <span class="mu">'+esc(Object.values(c.t).filter(Boolean).join(' · '))+'</span><em>'+esc((dm[c.id]||[]).join(', '))+'</em>'+chips(c.g||[])+'</div><button class="ic dg" data-a="wd" data-i="'+c.id+'" title="'+t('delete')+'">\u2715</button></div>'}).join('')+(r.length>200?'<p class="mu">\u2026 '+t('narrow')+'</p>':'')}
 function dictV() { return "<div class=\"pn\"><h3 style=\"margin:0 0 8px\">".concat(t('dictT'), "</h3><div class=\"nb\"><input id=\"qw\" autocomplete=\"off\" placeholder=\"").concat(t('wordPh'), "\"><button class=\"pri\" data-a=\"qa\">\uFF0B ").concat(t('addB'), "</button></div><div id=\"qs\" class=\"stt\"></div><div class=\"fr\"><input id=\"bq\" placeholder=\"").concat(t('search'), "\" value=\"").concat(esc(BF.q), "\"><select id=\"bd\"><option value=\"\">").concat(t('all'), "</option>").concat(dopt(1, 0, 1).replace("value=\"".concat(BF.d, "\""), "value=\"".concat(BF.d, "\" selected")), "</select><select id=\"bg\"><option value=\"\">").concat(t('tags'), "</option>").concat(S.tags.map(function (g) { return "<option".concat(BF.g == g ? ' selected' : '', ">").concat(esc(g), "</option>"); }).join(''), "</select><select id=\"bs\">").concat(['az', 'new', 'deck'].map(function (x) { return "<option value=\"".concat(x, "\"").concat(BF.s == x ? ' selected' : '', ">").concat(t('s_' + x), "</option>"); }).join(''), "</select></div><div id=\"bl\">").concat(lst(), "</div></div>"); }
 function qchk() { var e = $('#qs'), i = $('#qw'), x = dup(i.value); if (!i.value.trim()) {
     e.className = 'stt';
@@ -412,7 +422,7 @@ function formH() {
 function cardForm(deck, card, pre) { if (!S.decks.length)
     return A.nd(); F = card ? { id: card.id, deck: card.k, w: card.w, v: __assign({}, card.t), d: card.d, g: __spreadArray([], card.g, true) } : { deck: dk(deck) ? deck : dk(cur) ? cur : S.decks[0].id, w: pre || '', v: {}, d: '', g: __spreadArray([], lastG, true) }; ovl(formH()); setTimeout(function () { (F.w && MD.querySelector('[data-f]') || $('#fw')).focus(); chk(); }, 30); }
 function chk() { var e = $('#fs'), i = $('#fw'); if (!e || !F)
-    return; var x = dup(i.value, F.deck); if (!i.value.trim()) {
+    return; var x = dup(i.value, F.deck, FW()); if (!i.value.trim()) {
     e.className = 'stt';
     e.textContent = '';
     CL(i, 'bad', 0);
@@ -576,7 +586,7 @@ A.sv = function () {
     var w = F.w.trim();
     if (!w)
         return $('#fw').focus();
-    var x = dup(w, F.deck);
+    var x = dup(w, F.deck, FW());
     if (x && x.id !== F.id) {
         toast("\u201C".concat(x.w, "\u201D: ").concat(t('exists')), 1);
         var e = $('#fs');
@@ -590,6 +600,7 @@ A.sv = function () {
         tr[f.id] = v; });
     if (F.id) {
         Object.assign(S.cards.find(function (c) { return c.id == F.id; }), { w: w, k: F.deck, t: tr, d: F.d.trim(), g: F.g });
+        cw(S.cards.find(function (c) { return c.id == F.id; }));
         save();
         toast(t('saved'));
         var fv = F.fv, fid = F.id;
@@ -600,6 +611,7 @@ A.sv = function () {
         return;
     }
     S.cards.push({ id: uid(), k: F.deck, w: w, t: tr, d: F.d.trim(), g: __spreadArray([], F.g, true), st: 'new', ivl: 0, ef: 2.5, due: 0, at: Date.now() });
+    cw(S.cards[S.cards.length - 1]);
     cur = F.deck;
     lastG = __spreadArray([], F.g, true);
     save();
@@ -663,7 +675,7 @@ A.dd = function (_, b) { var ids = sub(DS.id); if (!b.getAttribute('data-s')) {
 } S.decks = S.decks.filter(function (d) { return !ids.includes(d.id); }); S.cards = S.cards.filter(function (c) { return !ids.includes(c.k); }); save(); shut(); };
 var tmH = function () { return S.tags.map(function (g) { return "<span class=\"tg\">".concat(esc(g), "<button data-a=\"rt\" data-i=\"").concat(esc(g), "\">\u2715</button></span>"); }).join(''); };
 function settings() {
-    ovl("<h3>".concat(t('set'), "</h3><label>").concat(t('lang'), "<select id=\"sl\"><option value=\"tr\"").concat(S.lang == 'tr' ? ' selected' : '', ">T\u00FCrk\u00E7e</option><option value=\"en\"").concat(S.lang == 'en' ? ' selected' : '', ">English</option></select></label>\n<label>").concat(t('theme'), "<select id=\"sth\">").concat(['auto', 'light', 'dark', 'ocean'].map(function (x) { return "<option value=\"".concat(x, "\"").concat(S.theme == x ? ' selected' : '', ">").concat(t('th_' + x), "</option>"); }).join(''), "</select></label>\n<label>").concat(t('perDay'), "<input id=\"sp\" type=\"number\" min=\"0\" max=\"999\" value=\"").concat(S.per, "\"></label>\n<label>").concat(t('perRev'), "<input id=\"spr\" type=\"number\" min=\"0\" max=\"9999\" value=\"").concat(S.pr == null ? 200 : S.pr, "\"></label>\n<div class=\"lb\">").concat(t('tagMgr'), "</div><div id=\"tm\">").concat(tmH(), "</div><div class=\"nb\"><input id=\"nt2\" data-en=\"at2\" placeholder=\"").concat(t('newTag'), "\"><button data-a=\"at2\">\uFF0B</button></div>\n<div class=\"lb\">").concat(t('data'), "</div><div class=\"nb\"><button data-a=\"ex\">").concat(t('export'), "</button><label class=\"bt2\">").concat(t('import'), "<input type=\"file\" id=\"im\" accept=\".json,application/json\" hidden></label></div><div class=\"lb\">").concat(t('cloud'), "</div><input id=\"gt\" type=\"password\" autocomplete=\"off\" placeholder=\"").concat(t('clTok'), "\" value=\"").concat(esc(S.gt || ''), "\"><div class=\"fr\"><input id=\"gr\" placeholder=\"user/repo\" value=\"").concat(esc(S.gr || defRepo()), "\"><input id=\"gp\" placeholder=\"data.json\" value=\"").concat(esc(S.gp || 'data.json'), "\"></div><input id=\"rl\" placeholder=\"").concat(t('sy_relay'), "\" value=\"").concat(esc(S.rl || ''), "\"><div class=\"nb\"><button data-a=\"cl\">\u27F3 ").concat(t('clLoad'), "</button><button data-a=\"dg\">").concat(t('sy_diag'), "</button></div><p class=\"mu\" id=\"cls\">").concat(sMsg(), "</p>").concat(SY.st == 'err' && /^(format|404)/.test(SY.msg) && (S.gt || '').trim() ? "<button class=\"dg\" data-a=\"fp\">".concat(t('sy_force'), "</button>") : '', "<p class=\"mu\">").concat(t('sy_help'), "</p><p class=\"mu\" id=\"ims\"></p>\n<div class=\"ac\"><button class=\"pri\" data-a=\"sh\">").concat(t('close'), "</button></div>"));
+    ovl("<h3>".concat(t('set'), "</h3><label>Profile<input id=\"pf\" value=\"").concat(esc(S.prof || ''), "\" placeholder=\"name\"></label><label>").concat(t('lang'), "<select id=\"sl\"><option value=\"tr\"").concat(S.lang == 'tr' ? ' selected' : '', ">T\u00FCrk\u00E7e</option><option value=\"en\"").concat(S.lang == 'en' ? ' selected' : '', ">English</option></select></label>\n<label>").concat(t('theme'), "<select id=\"sth\">").concat(['auto', 'light', 'dark', 'ocean'].map(function (x) { return "<option value=\"".concat(x, "\"").concat(S.theme == x ? ' selected' : '', ">").concat(t('th_' + x), "</option>"); }).join(''), "</select></label>\n<label>").concat(t('perDay'), "<input id=\"sp\" type=\"number\" min=\"0\" max=\"999\" value=\"").concat(S.per, "\"></label>\n<label>").concat(t('perRev'), "<input id=\"spr\" type=\"number\" min=\"0\" max=\"9999\" value=\"").concat(S.pr == null ? 200 : S.pr, "\"></label>\n<div class=\"lb\">").concat(t('tagMgr'), "</div><div id=\"tm\">").concat(tmH(), "</div><div class=\"nb\"><input id=\"nt2\" data-en=\"at2\" placeholder=\"").concat(t('newTag'), "\"><button data-a=\"at2\">\uFF0B</button></div>\n<div class=\"lb\">").concat(t('data'), "</div><div class=\"nb\"><button data-a=\"ex\">").concat(t('export'), "</button><label class=\"bt2\">").concat(t('import'), "<input type=\"file\" id=\"im\" accept=\".json,application/json\" hidden></label></div><div class=\"lb\">").concat(t('cloud'), "</div><input id=\"gt\" type=\"password\" autocomplete=\"off\" placeholder=\"").concat(t('clTok'), "\" value=\"").concat(esc(S.gt || ''), "\"><div class=\"fr\"><input id=\"gr\" placeholder=\"user/repo\" value=\"").concat(esc(S.gr || defRepo()), "\"><input id=\"gp\" placeholder=\"data.json\" value=\"").concat(esc(S.gp || 'data.json'), "\"></div><input id=\"rl\" placeholder=\"").concat(t('sy_relay'), "\" value=\"").concat(esc(S.rl || ''), "\"><div class=\"nb\"><button data-a=\"cl\">\u27F3 ").concat(t('clLoad'), "</button><button data-a=\"dg\">").concat(t('sy_diag'), "</button></div><p class=\"mu\" id=\"cls\">").concat(sMsg(), "</p>").concat(SY.st == 'err' && /^(format|404)/.test(SY.msg) && (S.gt || '').trim() ? "<button class=\"dg\" data-a=\"fp\">".concat(t('sy_force'), "</button>") : '', "<p class=\"mu\">").concat(t('sy_help'), "</p><p class=\"mu\" id=\"ims\"></p>\n<div class=\"ac\"><button class=\"pri\" data-a=\"sh\">").concat(t('close'), "</button></div>"));
 }
 A.at2 = function () { var i = $('#nt2'), g = i.value.trim(); if (g && !S.tags.some(function (x) { return norm(x) == norm(g); }))
     S.tags.push(g); i.value = ''; save(); $('#tm').innerHTML = tmH(); };
@@ -671,7 +683,7 @@ A.rt = function (g, b) { if (!b.getAttribute('data-s')) {
     b.setAttribute('data-s', 1);
     b.textContent = '?';
     return;
-} S.tags = S.tags.filter(function (x) { return x != g; }); S.cards.forEach(function (c) { c.g = c.g.filter(function (x) { return x != g; }); }); lastG = lastG.filter(function (x) { return x != g; }); save(); $('#tm').innerHTML = tmH(); };
+} S.tags = S.tags.filter(function (x) { return x != g; }); S.words.forEach(function (w) { w.g = (w.g || []).filter(function (x) { return x != g; }); }); S.cards.forEach(function (c) { c.g = c.g.filter(function (x) { return x != g; }); }); lastG = lastG.filter(function (x) { return x != g; }); save(); $('#tm').innerHTML = tmH(); };
 A.ex = function () {
     var d = JSON.stringify(shared(1));
     var ok = false;
@@ -773,32 +785,29 @@ function impT(x) {
     say('#ims', t('impOk').replace('{a}', a).replace('{s}', s));
 }
 var dtarget = function () { var ok = function (id) { var d = dk(id); return !!d && !d.nodict; }; return Q && ok(Q.deck) ? Q.deck : ok(cur) ? cur : (S.decks.find(function (d) { return !d.nodict; }) || S.decks[0] || {}).id; };
-A.qa = function () { var i = $('#qw'), w = i.value.trim(); if (!w)
-    return i.focus(); var x = dup(w); if (x) {
-    toast("\u201C".concat(x.w, "\u201D: ").concat(t('exists')), 1);
-    var e = $('#qs');
-    CL(e, 'shk', 0);
-    void e.offsetWidth;
-    CL(e, 'shk', 1);
-    return;
-} cardForm(dtarget(), null, w); };
+var WF=null;
+function wsy(){WF.w=$('#ww').value;WF.d=$('#wx').value;MD.querySelectorAll('[data-wt]').forEach(function(i){WF.t[i.getAttribute('data-wt')]=i.value})}
+function wfH(){var ns=wf();for(var k in WF.t)if(ns.indexOf(k)<0)ns.push(k);ovl('<h3>'+t(WF.id?'edit':'add')+'</h3><label>'+t('word')+'<input id="ww" data-en="wsv" value="'+esc(WF.w)+'"></label>'+ns.map(function(n){return '<label>'+esc(n)+'<input data-wt="'+esc(n)+'" value="'+esc(WF.t[n]||'')+'"></label>'}).join('')+'<div class="nb"><input id="wnf" placeholder="'+t('boxPh')+'"><button data-a="waf">'+t('addBox')+'</button></div><label>'+t('desc')+'<textarea id="wx" rows="3">'+esc(WF.d)+'</textarea></label><div class="lb">'+t('tags')+'</div><div>'+(S.tags.map(function(g){return '<button class="tg'+(WF.g.includes(g)?' on':'')+'" data-a="wtg" data-i="'+esc(g)+'">'+esc(g)+'</button>'}).join('')||'<span class="mu">'+t('noTags')+'</span>')+'</div><div class="ac"><button data-a="sh">'+t('cancel')+'</button><button class="pri" data-a="wsv">'+t('save')+'</button></div>')}
+function wform(id,pre){var w=id&&wfind(id);WF=w?{id:id,w:w.w,t:Object.assign({},w.t),d:w.d||'',g:(w.g||[]).slice()}:{w:pre||'',t:{},d:'',g:[]};F=null;wfH();setTimeout(function(){$('#ww').focus()},30)}
+A.vw=function(id){wform(id)};
+A.waf=function(){wsy();var n=$('#wnf').value.trim();if(n&&!(n in WF.t))WF.t[n]='';wfH()};
+A.wtg=function(g){wsy();WF.g=WF.g.includes(g)?WF.g.filter(function(x){return x!=g}):WF.g.concat(g);wfH()};
+A.wsv=function(){wsy();var n=WF.w.trim();if(!n)return $('#ww').focus();var x=dup(n,null,WF.id);if(x)return toast('\u201C'+x.w+'\u201D: '+t('exists'),1);
+var w=WF.id?wfind(WF.id):{id:uid(),at:Date.now()};if(!WF.id)S.words.push(w);w.w=n;w.d=WF.d.trim();w.g=WF.g.slice();w.t={};for(var k in WF.t){var v=(WF.t[k]||'').trim();if(v)w.t[k]=v}wsave(w);save();WF=null;shut()};
+A.wd=function(id,b){if(!b.getAttribute('data-s')){b.setAttribute('data-s',1);b.textContent=t('sure');return}wdel([id]);save();toast(t('deleted'));ref()};
+A.qa=function(){var i=$('#qw'),w=i.value.trim();if(!w)return i.focus();var x=dup(w);if(x){toast('\u201C'+x.w+'\u201D: '+t('exists'),1);return}i.value='';wform(null,w)};
 A.rd = function (id, b) { if (!b.getAttribute('data-s')) {
     b.setAttribute('data-s', 1);
     b.textContent = t('sure');
     return;
 } S.cards = S.cards.filter(function (c) { return c.id != id; }); SEL.delete(id); if (Q)
     Q.q = Q.q.filter(function (x) { return x != id; }); save(); toast(t('deleted')); ref(); };
-A.bd = function (_, b) { if (!b.getAttribute('data-s')) {
-    b.setAttribute('data-s', 1);
-    b.textContent = t('sure') + ' (' + SEL.size + ')';
-    return;
-} S.cards = S.cards.filter(function (c) { return !SEL.has(c.id); }); if (Q)
-    Q.q = Q.q.filter(function (x) { return !SEL.has(x); }); SEL.clear(); save(); toast(t('deleted')); ref(); };
+A.bd=function(_,b){if(!b.getAttribute('data-s')){b.setAttribute('data-s',1);b.textContent=t('sure')+' ('+SEL.size+')';return}wdel(SEL.a.slice());save();toast(t('deleted'));ref()};
 A.ct = function (g) { var c = S.cards.find(function (x) { return x.id == Q.q[0]; }); if (!c)
-    return; c.g = c.g.includes(g) ? c.g.filter(function (x) { return x != g; }) : __spreadArray(__spreadArray([], c.g, true), [g], false); save(); $('#stg').innerHTML = stg(c); ref(1); };
+    return; c.g = c.g.includes(g) ? c.g.filter(function (x) { return x != g; }) : __spreadArray(__spreadArray([], c.g, true), [g], false); cw(c); save(); $('#stg').innerHTML = stg(c); ref(1); };
 A.cn = function () { var c = S.cards.find(function (x) { return x.id == Q.q[0]; }), i = $('#sn'), g = i.value.trim(); if (!c || !g)
     return; var ex = S.tags.find(function (x) { return norm(x) == norm(g); }) || (S.tags.push(g), g); if (!c.g.includes(ex))
-    c.g.push(ex); save(); $('#stg').innerHTML = stg(c); ref(1); $('#sn').focus(); };
+    c.g.push(ex); cw(c); save(); $('#stg').innerHTML = stg(c); ref(1); $('#sn').focus(); };
 document.addEventListener('keydown', function (e) { if (K(e) != 'Enter')
     return; if (e.target.id == 'qw') {
     e.preventDefault();
@@ -865,15 +874,19 @@ document.addEventListener('change', function (e) {
         ref(1);
     }
     else if (i == 'bm' && v) {
-        S.cards.forEach(function (c) { if (SEL.has(c.id))
-            c.k = v; });
+        var na = 0;
+        S.words.forEach(function (w) { if (SEL.has(w.id))
+            na += wadd(w, v); });
         SEL.clear();
         save();
         ref();
+        toast('+' + na);
     }
     else if (i == 'btg' && v) {
-        S.cards.forEach(function (c) { if (SEL.has(c.id) && !c.g.includes(v))
-            c.g.push(v); });
+        S.words.forEach(function (w) { if (SEL.has(w.id) && !(w.g || []).includes(v)) {
+            w.g = (w.g || []).concat(v);
+            wsave(w);
+        } });
         save();
         ref(1);
     }
@@ -884,6 +897,24 @@ document.addEventListener('change', function (e) {
     }
     else if (i == 'im')
         imp(e.target.files[0]);
+    else if (i == 'pf') {
+        v = v.trim();
+        if (S.prof && v !== S.prof) {
+            if (SY.dirty)
+                return toast(t('sy_dirty'), 1);
+            S.decks = [];
+            S.cards = [];
+            S.folders = [];
+            S.top = [];
+            S.del = {};
+            S.sg = undefined;
+            V = 'decks';
+            Q = null;
+        }
+        S.prof = v;
+        save();
+        kick(1);
+    }
     else if (i == 'gt' || i == 'gr' || i == 'gp' || i == 'rl') {
         S[i] = v.trim();
         persist();
@@ -918,7 +949,8 @@ function sst(st, m) { SY.st = st; SY.msg = m || ''; var b = $('#sy'); if (b)
     e.textContent = sMsg(); }
 function hs(o) { var x = JSON.stringify(o, function (k, v) { return k == 'mt' ? undefined : v; }); var h = 5381; for (var i = 0; i < x.length; i++)
     h = ((h << 5) + h + x.charCodeAt(i)) | 0; return h; }
-function recs() { return S.cards.concat(S.decks, S.folders); }
+var SF = 'd';
+function recs() { return S.cards.concat(S.decks, S.folders, S.words || []); }
 function stamp() {
     var now = Date.now();
     if (!S.del)
@@ -956,11 +988,13 @@ function stamp() {
             delete S.del[id];
 }
 function rebase() { S.sg = {}; recs().forEach(function (r) { S.sg[r.id] = hs(r); }); S.topsg = hs(S.top); S.tagsg = hs(S.tags); }
-function shared(dev) { var o = { v: 2, savedAt: Date.now(), decks: S.decks, folders: S.folders, top: S.top, topmt: S.topmt || 0, cards: S.cards, tags: S.tags, tagsmt: S.tagsmt || 0, del: S.del || {} }; if (dev) {
-    o.lang = S.lang;
-    o.theme = S.theme;
-    o.per = S.per;
-} return o; }
+function shared(dev) {
+    var o = { v: 3, savedAt: Date.now(), del: S.del || {} };
+    if (dev || SF == 'u') { o.decks = S.decks; o.folders = S.folders; o.top = S.top; o.topmt = S.topmt || 0; o.cards = S.cards; }
+    if (dev || SF == 'd') { o.words = S.words; o.tags = S.tags; o.tagsmt = S.tagsmt || 0; }
+    if (dev) { o.lang = S.lang; o.theme = S.theme; o.per = S.per; }
+    return o;
+}
 function mergeIn(r) {
     var need = false, chg = false;
     var ld = S.del || (S.del = {}), rd = r.del || {}, dl = {};
@@ -998,12 +1032,17 @@ function mergeIn(r) {
         });
         return keep;
     };
-    S.cards = mg(S.cards, r.cards || []);
-    S.decks = mg(S.decks, r.decks || []);
-    S.folders = mg(S.folders, r.folders || []);
+    if (SF == 'u') {
+        S.cards = mg(S.cards, r.cards || []);
+        S.decks = mg(S.decks, r.decks || []);
+        S.folders = mg(S.folders, r.folders || []);
+    }
+    else
+        S.words = mg(S.words, r.words || []);
     S.del = dl;
     var tm = (r.topmt || 0), lm = (S.topmt || 0);
-    if (tm > lm || (tm == lm && hs(r.top || []) !== hs(S.top))) {
+    if (SF != 'u') { }
+    else if (tm > lm || (tm == lm && hs(r.top || []) !== hs(S.top))) {
         S.top = (r.top || []).slice();
         S.topmt = tm;
         chg = true;
@@ -1011,7 +1050,8 @@ function mergeIn(r) {
     else if (lm > tm)
         need = true;
     var gm = (r.tagsmt || 0), hm = (S.tagsmt || 0);
-    if (gm > hm || (gm == hm && hs(r.tags || []) !== hs(S.tags))) {
+    if (SF != 'd') { }
+    else if (gm > hm || (gm == hm && hs(r.tags || []) !== hs(S.tags))) {
         S.tags = (r.tags || []).slice();
         S.tagsmt = gm;
         chg = true;
@@ -1021,12 +1061,19 @@ function mergeIn(r) {
     S.cards = S.cards.filter(function (c) { return dk(c.k); });
     S.cards.forEach(function (c) { return (c.g || []).forEach(function (g) { if (S.tags.indexOf(g) < 0)
         S.tags.push(g); }); });
+    if (SF == 'd') {
+        var nb = S.cards.length;
+        S.cards = S.cards.filter(function (c) { return !c.wid || wfind(c.wid); });
+        if (S.cards.length !== nb) chg = true;
+        S.words.forEach(function (w) { (w.g || []).forEach(function (g) { if (S.tags.indexOf(g) < 0) S.tags.push(g); }); });
+        S.cards.forEach(function (c) { var w = c.wid && wfind(c.wid); if (w && dk(c.k)) { var h0 = hs(c); wapply(c, w); if (hs(c) !== h0) chg = true; } });
+    }
     fix();
     rebase();
     return { need: need, chg: chg };
 }
 function defRepo() { var m = location.hostname.match(/^([^.]+)\.github\.io$/i), p = location.pathname.split('/')[1]; return m && p ? m[1] + '/' + p : 'awmaqis/Sozkart'; }
-function cfg() { return { repo: (S.gr || defRepo()).trim(), path: (S.gp || 'data.json').trim().replace(/^\/+/, ''), br: 'main' }; }
+function cfg() { return { repo: (S.gr || defRepo()).trim(), path: SF == 'd' ? 'dictionary.json' : 'users/' + pn() + '.json', br: 'main' }; }
 function b64(x) { return btoa(unescape(encodeURIComponent(x))); }
 function unb64(x) { return decodeURIComponent(escape(atob(x.replace(/\s/g, '')))); }
 function api(m, u, b, raw, cb) {
@@ -1113,14 +1160,17 @@ function cycle(n) {
     sst('busy');
     var tk = (S.gt || '').trim();
     pull(function (err, r) {
-        var stop = function (st, m) { SY.busy = 0; sst(st, m); if (st == 'err' && tk) {
+        var stop = function (st, m) { if (SF == 'd' && st != 'err') {
+            SF = 'u';
+            return cycle(0);
+        } SY.busy = 0; sst(st, m); if (st == 'err' && tk) {
             clearTimeout(SY.tm);
             SY.tm = setTimeout(function () { return kick(1); }, 60000);
         }
         else if (SY.dirty && tk)
             sched(); };
         if (err == 'offline')
-            return rd(function (d) { probe(function (z) { var ok = d && Array.isArray(d.cards) && Array.isArray(d.decks); if (ok) {
+            return rd(function (d) { probe(function (z) { var ok = d && (SF == 'd' ? Array.isArray(d.words) : Array.isArray(d.cards) && Array.isArray(d.decks)); if (ok) {
                 var m = mergeIn(d);
                 if (m.chg) {
                     persist();
@@ -1132,7 +1182,7 @@ function cycle(n) {
             return stop('err', err);
         var need = false;
         if (r.data) {
-            if (!Array.isArray(r.data.cards) || !Array.isArray(r.data.decks))
+            if (SF == 'd' ? !Array.isArray(r.data.words) : (!Array.isArray(r.data.cards) || !Array.isArray(r.data.decks)))
                 return stop('err', 'format (' + Object.keys(r.data).slice(0, 5).join(', ') + ')');
             var m = mergeIn(r.data);
             need = m.need;
@@ -1143,18 +1193,18 @@ function cycle(n) {
             }
         }
         else {
-            if (!S.decks.length && !S.cards.length)
+            if (SF == 'd' && !S.words.length)
                 return stop('err', '404');
             need = true;
         }
         if (!tk)
             return stop(SY.dirty ? 'dirty' : 'off');
-        if (!need && !SY.dirty)
+        if (!need && (SF == 'd' || !SY.dirty))
             return stop('ok');
         var ver = SY.ver;
         put(r.sha, function (st) {
             if (st == 200 || st == 201) {
-                if (SY.ver == ver)
+                if (SY.ver == ver && SF == 'u')
                     SY.dirty = false;
                 return stop(SY.dirty ? 'dirty' : 'ok');
             }
@@ -1169,7 +1219,7 @@ function kick(f) { if (SY.busy)
     SY.wait = 1;
     return;
 } if (!f && Date.now() - SY.last < 15000)
-    return; SY.last = Date.now(); cycle(0); }
+    return; SY.last = Date.now(); SF = 'd'; cycle(0); }
 function sched() { clearTimeout(SY.tm); if ((S.gt || '').trim())
     SY.tm = setTimeout(function () { return kick(1); }, 8000);
 else
